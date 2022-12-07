@@ -1,0 +1,149 @@
+/* ==== 
+ --------- (5.2) projects section styles start ---------
+ ==== */
+
+.projects {
+  .projects__slider {
+    overflow: hidden;
+  }
+
+  .projects__thumb {
+    border-radius: 10px;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+
+  .projects__content {
+    h5 {
+      margin-bottom: 26px;
+      color: $primary-color;
+    }
+
+    h2 {
+      margin-bottom: 17px;
+    }
+  }
+
+  .projects__content-tag {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    border: 1px solid #ffffff50;
+    border-radius: 10px;
+    margin-top: 40px;
+
+    span {
+      margin: 0px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .project__content-demo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .projects__slider-nav {
+    margin-top: 40px;
+    gap: 24px;
+    button {
+      background-color: transparent;
+      @include box(50px);
+      position: relative;
+      i {
+        transition: $transition;
+      }
+      .gg-arrow-long-left {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        border-top: 2px solid $white;
+        width: 44px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -15%;
+          width: 20px;
+          height: 20px;
+          transform: translateY(-55%);
+          border-radius: 50%;
+          background-color: #b1601a50;
+          transition: $transition;
+          z-index: -1;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-bottom: 2px solid $white;
+          border-left: 2px solid $white;
+          transform: rotate(45deg);
+          left: 0;
+          bottom: -2.8px;
+        }
+      }
+
+      .gg-arrow-long-right {
+        box-sizing: border-box;
+        position: relative;
+        display: block;
+        border-top: 2px solid $white;
+        width: 44px;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: -15%;
+          width: 20px;
+          height: 20px;
+          transform: translateY(-55%);
+          border-radius: 50%;
+          background-color: #b1601a50;
+          transition: $transition;
+          z-index: -1;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          box-sizing: border-box;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-top: 2px solid $white;
+          border-right: 2px solid $white;
+          transform: rotate(45deg);
+          right: 0;
+          bottom: -2.8px;
+        }
+      }
+      &:hover {
+        color: $white;
+        i {
+          width: 50px;
+          &::after {
+            background-color: #b1601a;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==== 
+ --------- (5.2) projects section styles end ---------
+ ==== */

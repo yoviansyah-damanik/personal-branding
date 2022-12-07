@@ -1,0 +1,109 @@
+/* ==== 
+ --------- (2.2) typography styles start ---------
+ ==== */
+
+// paragraphy styles
+p,
+th,
+td,
+li,
+input,
+textarea,
+select,
+label,
+blockquote,
+span {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-top: -7px;
+  color: $theme-color;
+}
+
+.primary-text {
+  font-size: 24px;
+  line-height: 34px;
+  margin-top: -7px;
+}
+
+// link styles
+a,
+button {
+  font-size: 18px;
+  line-height: 24px;
+  color: $theme-color;
+  font-weight: 600;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+// heading styles
+h1,
+.hero-title {
+  font-size: 76px;
+  line-height: 92px;
+  margin-top: -11px;
+  letter-spacing: -1px;
+
+  span {
+    color: $primary-color;
+  }
+}
+
+h2,
+.section-title {
+  font-size: 57px;
+  line-height: 74px;
+  margin-top: -12px;
+}
+
+h3 {
+  font-size: 43px;
+  line-height: 55px;
+  margin-top: -8px;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 40px;
+  margin-top: -6px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 32px;
+  margin-top: -5px;
+}
+
+h6 {
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: -4px;
+}
+
+h1 > a,
+h1 > span,
+h2 > a,
+h2 > span,
+h3 > a,
+h3 > span,
+h4 > a,
+h4 > span,
+h5 > a,
+h5 > span,
+h6 > a,
+h6 > span,
+p > a,
+p > span {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+/* ==== 
+ --------- (2.2) typography styles end ---------
+ ==== */

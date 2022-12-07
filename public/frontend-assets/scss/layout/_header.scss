@@ -1,0 +1,187 @@
+/* ==== 
+ --------- (4.1) header styles start ---------
+ ==== */
+
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 9;
+  .container-fluid {
+    padding: 0px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    padding: 25px 80px;
+
+    li {
+      margin: 0px;
+    }
+  }
+
+  .nav__logo {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 900;
+    gap: 0px;
+    span {
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      color: $primary-color;
+      margin: 0px;
+    }
+  }
+
+  .nav__items {
+    flex-grow: 1;
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        padding: 10px 25px;
+        font-weight: 600;
+        transition: 0.2s;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 2px;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      .active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .close {
+    font-size: 40px !important;
+    line-height: 40px;
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    display: none;
+    transition: $transition;
+    padding: 0px !important;
+    color: $primary-color;
+    background-color: transparent;
+    i {
+      transform: rotate(0deg);
+    }
+    &:hover {
+      color: $white;
+      i {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .nav__uncollapsed {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    a {
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .social {
+      display: flex;
+      a {
+        color: $white;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .nav__bar {
+      padding: 0px;
+      display: inline-block;
+      background-color: transparent;
+      span {
+        transform: translateY(0px);
+      }
+      .icon-bar {
+        width: 35px;
+        height: 2px;
+        background-color: $theme-color;
+        margin: 0px;
+        display: block;
+        transition: all 0.3s;
+      }
+      .middle-bar {
+        margin: 6px 0px;
+        opacity: 1;
+      }
+    }
+
+    .nav__bar-toggle {
+      .top-bar {
+        transform: rotate(-45deg) translate(-7px, 4px);
+        background: $primary-color;
+      }
+      .middle-bar {
+        opacity: 0;
+      }
+      .bottom-bar {
+        transform: rotate(45deg) translate(-7px, -4px);
+        background: $primary-color;
+      }
+    }
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    display: none;
+
+    a {
+      font-size: 16px;
+      letter-spacing: 2px;
+      font-weight: 400;
+      color: $primary-color;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.sticky-active {
+  background-color: #161616;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000000ba;
+  z-index: 9;
+  transform: translateX(100%);
+}
+
+.backdrop-active {
+  transform: translateX(0px);
+  z-index: 8;
+}
+
+/* ==== 
+ --------- (4.1) header styles end ---------
+ ==== */

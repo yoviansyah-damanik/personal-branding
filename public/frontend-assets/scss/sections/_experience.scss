@@ -1,0 +1,84 @@
+/* ==== 
+ --------- (5.3) projects section styles end ---------
+ ==== */
+
+.experience {
+  .section__inner-content {
+    background-image: url("../images/profile.png");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right 0% bottom;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: #00000095;
+      z-index: -1;
+    }
+  }
+
+  .experience__content-tab {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .experience__content-tab-btns {
+    min-width: 160px;
+    border-left: 1px solid #3f4e7c;
+    display: flex;
+    flex-direction: column;
+
+    .tab-btn {
+      padding: 15px 30px;
+      width: 100%;
+    }
+
+    .tab-btn-active {
+      background-color: $theme-bg;
+      color: $primary-color;
+      border-left: 1px solid $primary-color;
+    }
+  }
+
+  .experience__content-tab-content {
+    h5 {
+      margin-bottom: 20px;
+      span {
+        color: $primary-color;
+      }
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      &:nth-last-of-type(1) {
+        margin-bottom: 0px;
+      }
+
+      i {
+        color: $primary-color;
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+/* ==== 
+ --------- (5.3) projects section styles end ---------
+ ==== */

@@ -1,0 +1,158 @@
+/* ==== 
+ --------- (5.4) contact section styles start ---------
+ ==== */
+
+.contact {
+  .contact__content {
+    h2 {
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    h4 {
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    p {
+      max-width: 560px;
+      color: #ffffff80;
+    }
+  }
+
+  .contact__form {
+    padding: 60px;
+    background-color: #1e1e22;
+    border-radius: 10px;
+
+    .contact__form-input {
+      margin-bottom: 30px;
+      input,
+      textarea {
+        width: 100%;
+        background-color: transparent;
+        box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+        padding: 10px 20px 10px 0px;
+        font-weight: 300;
+        &::placeholder {
+          color: #ffffff50;
+        }
+      }
+    }
+
+    button {
+      padding: 12px 30px;
+      background-color: transparent;
+      border: 1px solid $primary-color;
+      border-radius: 30px;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+  }
+
+  .social__wrapper {
+    margin-top: 35px;
+    h6 {
+      margin-bottom: 15px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      a {
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .price-range {
+    width: 100%;
+    background-color: transparent;
+    height: auto;
+    padding: 10px 0px 10px 0px;
+    float: unset;
+    display: flex;
+    align-items: center;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.25);
+
+    span,
+    .option {
+      margin: 0px;
+    }
+
+    &::after {
+      width: 8px;
+      height: 8px;
+      margin-top: -6px;
+      border-color: #ffffff50;
+      right: 4px;
+    }
+
+    .list {
+      width: 100%;
+      padding: 0px 0px;
+      border: 0px;
+      background-color: #1e1e22;
+      box-shadow: 0px 1px 30px #00000060;
+
+      &:hover {
+        background-color: #1e1e22;
+        .option {
+          background-color: #1e1e22;
+        }
+      }
+    }
+
+    .focus {
+      background-color: #1e1e22 !important;
+      color: $primary-color;
+    }
+
+    .current {
+      color: $white;
+      border-radius: 0px;
+    }
+
+    .option {
+      background-color: #1e1e22;
+      border-bottom: 1px solid #ffffff30;
+      padding: 5px 20px;
+      transition: $transition;
+      &:nth-last-of-type(1) {
+        border-bottom: 0px;
+      }
+
+      &:hover {
+        background-color: $theme-bg;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .open {
+    background-color: #1e1e22;
+    border-bottom: 0px;
+    border-radius: 0px;
+  }
+
+  #contact-wave {
+    canvas {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      width: 100%;
+      z-index: -12;
+    }
+  }
+}
+
+/* ==== 
+ --------- (5.4) contact section styles end ---------
+ ==== */

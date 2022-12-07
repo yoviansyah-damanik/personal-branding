@@ -1,0 +1,126 @@
+/* ==== 
+ --------- (2.3) global styles start ---------
+ ==== */
+
+.row-margin {
+  margin-bottom: -30px;
+
+  .col-margin {
+    margin-bottom: 30px;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0px;
+  outline: 0px;
+}
+
+.bg-img {
+  @include background($theme-color, no-repeat, cover, center center);
+}
+
+.slick-slide {
+  margin: 0px 12px;
+
+  img {
+    display: inline-block;
+  }
+}
+
+.slick-list {
+  margin: 0px -12px;
+}
+
+// section styles start
+.section {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    z-index: -1;
+  }
+
+  .section__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+
+  .section__inner-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 200px 0px 200px;
+    min-height: 100vh;
+  }
+
+  .fp-scroller {
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .fp-tableCell {
+    display: block;
+  }
+}
+
+.iScrollVerticalScrollbar {
+  width: 4px !important;
+}
+
+.iScrollIndicator {
+  background-color: $primary-color !important;
+}
+
+.anim-wrapper {
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -12;
+
+  svg {
+    position: absolute;
+    height: 100%;
+  }
+
+  .lines {
+    opacity: 1 !important;
+  }
+
+  .line {
+    fill: #b1601a50 !important;
+    opacity: 1 !important;
+  }
+
+  .lights {
+    opacity: 1 !important;
+  }
+
+  .light {
+    fill: #b1601a90 !important;
+  }
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* ==== 
+ --------- (2.3) global styles end ---------
+ ==== */
