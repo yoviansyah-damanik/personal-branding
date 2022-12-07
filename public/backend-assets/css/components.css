@@ -58,7 +58,7 @@
 }
 
 .article .article-header {
-    height: 280px;
+    /* height: 280px; */
     position: relative;
     overflow: hidden;
 }

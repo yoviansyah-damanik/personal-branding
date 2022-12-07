@@ -69,7 +69,7 @@
                 <a href="{{ route('dashboard.account') }}" class="nav-link"><i
                         class="fas fa-user"></i><span>{{ __('Account') }}</span></a>
             </li>
-            <li class="nav-item {{ Request::routeIs('dashboard.general') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::routeIs('dashboard.general*') ? 'active' : '' }}">
                 <a href="{{ route('dashboard.general') }}" class="nav-link"><i
                         class="fas fa-wrench"></i><span>{{ __('General') }}</span></a>
             </li>

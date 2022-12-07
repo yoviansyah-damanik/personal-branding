@@ -40,11 +40,12 @@ class ProjectController extends Controller
     {
         $request->validate(
             [
-                'image' => 'required|image|dimensions:rasio=5/3',
+                'image' => 'required|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
                 'body' => 'required',
                 'sectors' => 'required|array',
-                'sectors.*' => Rule::in(Sector::get()->pluck('id'))
+                'sectors.*' => Rule::in(Sector::get()->pluck('id')),
+                'url' => 'nullable|url'
             ]
         );
 
@@ -58,6 +59,7 @@ class ProjectController extends Controller
                     'title' => $request->title,
                     'body' => $request->body,
                     'image' => $filename,
+                    'url' => $request->url,
                     'slug' => $slug
                 ]);
 
@@ -98,11 +100,12 @@ class ProjectController extends Controller
     {
         $request->validate(
             [
-                'image' => 'nullable|image|dimensions:rasio=5/3',
+                'image' => 'nullable|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
                 'body' => 'required',
                 'sectors' => 'required|array',
-                'sectors.*' => Rule::in(Sector::get()->pluck('id'))
+                'sectors.*' => Rule::in(Sector::get()->pluck('id')),
+                'url' => 'nullable|url'
             ]
         );
 
@@ -118,6 +121,7 @@ class ProjectController extends Controller
                 $project->slug = null;
                 $project->title = $request->title;
                 $project->body = $request->body;
+                $project->url = $request->url;
                 $project->save();
 
                 if ($request->sectors) {

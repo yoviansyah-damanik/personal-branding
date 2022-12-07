@@ -71,9 +71,9 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="sectors">{{ __('Tags') }}</label>
+                                                <label for="sectors">{{ __('Sectors') }}</label>
                                                 <select name="sectors[]" class="form-control selectric" multiple="">
                                                     <option disabled hidden>--{{ __('Please select') }}--</option>
                                                     @foreach ($sectors as $sector)
@@ -90,10 +90,22 @@
                                                 @enderror
                                             </div>
                                         </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="url">{{ __('URL') }}</label>
+                                                <input type="url" name="url" id="url" class="form-control"
+                                                    value="{{ old('url', $project->url) }}">
+                                                @error('url')
+                                                    <div class="small text-danger">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="body">{{ __('Body') }}</label>
-                                                <textarea class="summernote-simple" name="body" required>{{ old('body', $project->body) }}</textarea>
+                                                <textarea class="summernote" name="body" required>{{ old('body', $project->body) }}</textarea>
                                                 @error('body')
                                                     <div class="small text-danger">
                                                         {{ $message }}

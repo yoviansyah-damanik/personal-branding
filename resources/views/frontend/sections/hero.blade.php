@@ -1,7 +1,7 @@
  <section class="section hero" id="one">
      <div class="section__inner">
-         <img src="assets/images/asset.jpg" alt="Image" class="anim max-width-unset" />
-         <div class="section__inner-content" data-background="./assets/images/profile.png">
+         <img src="{{ asset('frontend-assets/images/asset.jpg') }}" alt="Image" class="anim max-width-unset" />
+         <div class="section__inner-content" data-background="{{ asset('frontend-assets/images/profile.png') }}">
              <div class="container">
                  <div class="row align-items-center">
                      <div class="col-lg-10 col-xl-8">

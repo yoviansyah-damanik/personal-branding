@@ -118,6 +118,12 @@ Route::group(
             ->group(function () {
                 Route::get('/general', 'index')
                     ->name('general');
+                Route::get('/general/social_media', 'social_media')
+                    ->name('general.social_media');
+                Route::get('/general/site', 'site')
+                    ->name('general.site');
+                Route::get('/general/seo', 'seo')
+                    ->name('general.seo');
             });
     }
 );

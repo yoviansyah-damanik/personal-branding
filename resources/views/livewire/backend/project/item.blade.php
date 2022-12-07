@@ -4,6 +4,25 @@
             <div class="article-image">
                 <img src="{{ $project->image_path }}" alt="{{ $project->title }} Image">
             </div>
+            <div class="article-badge d-flex">
+                @if ($project->status == 1)
+                    <button class="article-badge-item bg-success" wire:click="$emitUp('set_status_project',1)">
+                        <i class="fas fa-check"></i>
+                        {{ __('Published') }}
+                    </button>
+                @else
+                    <button class="article-badge-item bg-warning" wire:click="$emitUp('set_status_project',0)">
+                        <i class="fas fa-file"></i>
+                        {{ __('Draft') }}
+                    </button>
+                @endif
+                @if ($project->url)
+                    <a href="{{ $project->url }}" target="_blank" class="ml-2 article-badge-item bg-primary"
+                        data-toggle="tooltip" title="{{ __('Visit') }}">
+                        <i class="fas fa-link"></i>
+                    </a>
+                @endif
+            </div>
         </div>
         <div class="article-details">
             <div class="article-title">

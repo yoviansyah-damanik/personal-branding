@@ -7,10 +7,11 @@
                 <ul>
                     <li><a href="#home" data-menuanchor="home" class="nav__item">{{ __('Home') }}</a></li>
                     <li><a href="#about" data-menuanchor="about" class="nav__item">{{ __('About') }}</a></li>
-                    <li><a href="#about" data-menuanchor="about" class="nav__item">{{ __('Blog') }}</a></li>
                     <li><a href="#projects" data-menuanchor="projects" class="nav__item">{{ __('Projects') }}</a></li>
-                    <li><a href="#experience" data-menuanchor="experience" class="nav__item">{{ __('Experience') }}</a>
+                    <li><a href="#experiences" data-menuanchor="experiences"
+                            class="nav__item">{{ __('Experiences') }}</a>
                     </li>
+                    <li><a href="#blogs" data-menuanchor="blogs" class="nav__item">{{ __('Blogs') }}</a></li>
                     <li><a href="#contact" data-menuanchor="contact" class="nav__item">{{ __('Contact') }}</a></li>
                 </ul>
                 <div class="social">

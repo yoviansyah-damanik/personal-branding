@@ -47,9 +47,17 @@
                                 <div class="content">
                                     <div class="title">{{ $project->title }}</div>
                                     <div class="subtitle">
-                                        @if($project->url)
-                                        <a href=""></a>
-                                        @endif
+                                        <div class="link">
+                                            @if ($project->url)
+                                                <a href="{{ $project->url }}" data-toggle="tooltip"
+                                                    title="{{ __('Visit') }}" target="_blank">
+                                                    <i class="fas fa-link"></i>
+                                                </a>
+                                            @else
+                                                {{ __('No link added.') }}
+                                            @endif
+                                        </div>
+                                        |
                                         <div class="time">
                                             <i class="fas fa-clock"></i>
                                             {{ $project->created_at->diffForHumans() }}

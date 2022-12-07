@@ -34,7 +34,7 @@
                             <li class="nav-item">
                                 <button class="nav-link @if ($status == 0) active @endif"
                                     wire:click="set_status(0)">
-                                    {{ __('Draft') }}
+                                    {{ __('Drafted') }}
                                     <span class="badge badge-primary">{{ $blog_drafted }}</span>
                                 </button>
                             </li>

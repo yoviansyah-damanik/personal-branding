@@ -10,7 +10,7 @@
             @enderror
         </div>
         <div class="form-group">
-            <label for="color">{{ __('Tag Color') }}</label>
+            <label for="color">{{ __('Sector Color') }}</label>
             <input type="color" class="form-control" wire:model="color">
             @error('color')
                 <div class="small text-danger">

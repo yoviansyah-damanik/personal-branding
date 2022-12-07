@@ -110,7 +110,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="body">{{ __('Body') }}</label>
-                                                <textarea class="summernote-simple" name="body" required>{{ old('body') }}</textarea>
+                                                <textarea class="summernote" name="body" required>{{ old('body') }}</textarea>
                                                 @error('body')
                                                     <div class="small text-danger">
                                                         {{ $message }}

@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="sectors">{{ __('Sector') }}</label>
+                                                <label for="sectors">{{ __('Sectors') }}</label>
                                                 <select name="sectors[]" id="sectors" class="form-control selectric"
                                                     multiple required>
                                                     <option disabled hidden>--{{ __('Please select') }}--</option>
@@ -98,7 +98,7 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="body">{{ __('Body') }}</label>
-                                                <textarea class="summernote-simple" name="body" required>{{ old('body') }}</textarea>
+                                                <textarea class="summernote" name="body" required>{{ old('body') }}</textarea>
                                                 @error('body')
                                                     <div class="small text-danger">
                                                         {{ $message }}

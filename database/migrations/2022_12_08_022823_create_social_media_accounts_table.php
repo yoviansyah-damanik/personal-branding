@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('configurations', function (Blueprint $table) {
+        Schema::create('social_media_accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('attribute')->index();
-            $table->string('value')->nullable();
+            $table->enum('type', ['facebook', 'twitter', 'linkedin', 'googleplus', 'youtube', 'github', 'discord', 'wordpress', 'stack-overflow', 'tiktok', 'instagram', 'steam', 'pinterest', 'telegram', 'whatsapp', 'line', 'skype', 'twitch', 'yahoo', 'snapchat']);
+            $table->text('url');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('configurations');
+        Schema::dropIfExists('social_media_accounts');
     }
 };
