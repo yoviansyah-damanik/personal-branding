@@ -34,7 +34,9 @@
 
      =================================
 ============== */
-@import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Philosopher&display=swap'); */
 
 /* ====
  --------- (2.1) reset styles start ---------
@@ -46,16 +48,16 @@
     box-sizing: border-box;
 }
 
-*::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 5px;
 }
 
-*::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background-color: #000000;
     border-radius: 5px;
 }
 
-*::-webkit-scrollbar-button, *::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
     background-color: #b1601a;
     border-radius: 5px;
 }
@@ -76,9 +78,9 @@ html {
 }
 
 body {
-    font-family: "Figtree", sans-serif;
-    font-size: 18px;
-    line-height: 0px;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 14px;
+    /* line-height: 0px; */
     font-weight: 400;
     color: #ffffff;
     background-color: #161616;
@@ -180,11 +182,20 @@ h2,
 h3,
 h4,
 h5,
+h6 {
+    font-weight: 600;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
 h6,
 p {
     padding: 0px;
     margin: 0px;
-    font-weight: 700;
+    /* font-weight: 700; */
     color: #ffffff;
 }
 
@@ -204,9 +215,9 @@ select,
 label,
 blockquote,
 span {
-    font-size: 18px;
+    /* font-size: 18px; */
     line-height: 30px;
-    font-weight: 400;
+    /* font-weight: 400; */
     margin-top: -7px;
     color: #ffffff;
 }
@@ -219,10 +230,10 @@ span {
 
 a,
 button {
-    font-size: 18px;
-    line-height: 24px;
+    /* font-size: 18px; */
+    /* line-height: 24px; */
     color: #ffffff;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 
 a:hover,
@@ -387,7 +398,8 @@ img {
 }
 
 .anim-wrapper {
-    height: 100vh;
+    /* height: 100vh; */
+    height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -399,6 +411,7 @@ img {
 .anim-wrapper svg {
     position: absolute;
     height: 100%;
+    width: 100%;
 }
 
 .anim-wrapper .lines {
@@ -465,7 +478,8 @@ canvas {
 }
 
 .ctn-preloader .animation-preloader .txt-loading {
-    font: bold 6em "Figtree", sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -613,9 +627,9 @@ canvas {
         width: 8em;
     }
 
-    .ctn-preloader .animation-preloader .txt-loading {
+    /* .ctn-preloader .animation-preloader .txt-loading {
         font: bold 3.5em "Figtree", sans-serif;
-    }
+    } */
 }
 
 @media screen and (max-width: 500px) {
@@ -624,9 +638,9 @@ canvas {
         width: 7em;
     }
 
-    .ctn-preloader .animation-preloader .txt-loading {
+    /* .ctn-preloader .animation-preloader .txt-loading {
         font: bold 4em "Figtree", sans-serif;
-    }
+    } */
 }
 
 /* ====
@@ -659,7 +673,7 @@ header .nav {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding: 25px 80px;
+    padding: 18px 80px;
 }
 
 header .nav li {
@@ -696,7 +710,8 @@ header .nav__items ul {
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    /* justify-content: center; */
+    justify-content: flex-end;
 }
 
 header .nav__items ul a {
@@ -705,7 +720,7 @@ header .nav__items ul a {
     -webkit-transition: 0.2s;
     transition: 0.2s;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1em;
     line-height: 16px;
     letter-spacing: 2px;
 }
@@ -829,7 +844,7 @@ header .social {
 }
 
 header .social a {
-    font-size: 16px;
+    font-size: 1em;
     letter-spacing: 2px;
     font-weight: 400;
     color: #b1601a;
@@ -1306,32 +1321,32 @@ header .social a:hover {
  --------- (5.1) about section styles end ---------
  ==== */
 /* ====
- --------- (5.2) projects section styles start ---------
+ --------- (5.2) companies section styles start ---------
  ==== */
-.projects .projects__slider {
+.companies .companies__slider {
     overflow: hidden;
 }
 
-.projects .projects__thumb {
+.companies .companies__thumb {
     border-radius: 10px;
 }
 
-.projects .projects__thumb img {
+.companies .companies__thumb img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.projects .projects__content h5 {
+.companies .companies__content h5 {
     margin-bottom: 26px;
     color: #b1601a;
 }
 
-.projects .projects__content h2 {
+.companies .companies__content h2 {
     margin-bottom: 17px;
 }
 
-.projects .projects__content-tag {
+.companies .companies__content-tag {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1347,14 +1362,14 @@ header .social a:hover {
     margin-top: 40px;
 }
 
-.projects .projects__content-tag span {
+.companies .companies__content-tag span {
     margin: 0px;
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.projects .project__content-demo {
+.companies .company__content-demo {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1365,12 +1380,12 @@ header .social a:hover {
     margin-top: 30px;
 }
 
-.projects .projects__slider-nav {
+.companies .companies__slider-nav {
     margin-top: 40px;
     gap: 24px;
 }
 
-.projects .projects__slider-nav button {
+.companies .companies__slider-nav button {
     background-color: transparent;
     width: 50px;
     min-width: 50px;
@@ -1388,12 +1403,12 @@ header .social a:hover {
     position: relative;
 }
 
-.projects .projects__slider-nav button i {
+.companies .companies__slider-nav button i {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-left {
+.companies .companies__slider-nav button .gg-arrow-long-left {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
@@ -1402,7 +1417,7 @@ header .social a:hover {
     width: 44px;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-left::after {
+.companies .companies__slider-nav button .gg-arrow-long-left::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -1418,7 +1433,7 @@ header .social a:hover {
     z-index: -1;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-left::before {
+.companies .companies__slider-nav button .gg-arrow-long-left::before {
     content: "";
     display: block;
     -webkit-box-sizing: border-box;
@@ -1434,7 +1449,7 @@ header .social a:hover {
     bottom: -2.8px;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-right {
+.companies .companies__slider-nav button .gg-arrow-long-right {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
@@ -1443,7 +1458,7 @@ header .social a:hover {
     width: 44px;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-right::after {
+.companies .companies__slider-nav button .gg-arrow-long-right::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -1459,7 +1474,7 @@ header .social a:hover {
     z-index: -1;
 }
 
-.projects .projects__slider-nav button .gg-arrow-long-right::before {
+.companies .companies__slider-nav button .gg-arrow-long-right::before {
     content: "";
     display: block;
     -webkit-box-sizing: border-box;
@@ -1475,15 +1490,15 @@ header .social a:hover {
     bottom: -2.8px;
 }
 
-.projects .projects__slider-nav button:hover {
+.companies .companies__slider-nav button:hover {
     color: #ffffff;
 }
 
-.projects .projects__slider-nav button:hover i {
+.companies .companies__slider-nav button:hover i {
     width: 50px;
 }
 
-.projects .projects__slider-nav button:hover i::after {
+.companies .companies__slider-nav button:hover i::after {
     background-color: #b1601a;
 }
 
@@ -1528,7 +1543,7 @@ header .social a:hover {
 }
 
 .experiences .experience__content-tab-btns {
-    min-width: 160px;
+    min-width: 200px;
     border-left: 1px solid #3f4e7c;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1537,6 +1552,12 @@ header .social a:hover {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+}
+
+@media only screen and (max-width: 767px) {
+    .experiences .experience__content-tab-btns {
+        min-width: 100%;
+    }
 }
 
 .experiences .experience__content-tab-btns .tab-btn {
@@ -1562,15 +1583,23 @@ header .social a:hover {
     margin-bottom: 25px;
 }
 
+.experiences .experience__content-tab-content :where(ul, ol) {
+    list-style-type: auto;
+    list-style-position: inherit;
+    padding-left: 1rem;
+    margin: auto;
+}
+
 .experiences .experience__content-tab-content li {
-    display: -webkit-box;
+    /* display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 10px; */
+    /* margin-bottom: 1rem; */
+    margin-top: 0;
 }
 
 .experiences .experience__content-tab-content li:nth-last-of-type(1) {
@@ -1671,7 +1700,7 @@ header .social a:hover {
 }
 
 .contact .social__wrapper .social a {
-    font-size: 16px;
+    font-size: 1em;
     font-weight: 400;
     letter-spacing: 1px;
 }
@@ -1960,7 +1989,7 @@ header .social a:hover {
  ==== */
 @media only screen and (max-width: 1399px) {
     header .nav {
-        padding: 25px 40px;
+        padding: 18px 40px;
     }
 
     header .nav__items {
@@ -2000,62 +2029,73 @@ header .social a:hover {
     }
 
     header .nav__items ul li:nth-of-type(1) .nav__item {
-        -webkit-transition: all 0.5s ease-in-out;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.s1 ease-in-out;
+        -webkit-transition: all 0.s1 ease-in-out;
+        -moz-transition: all 0.s1 ease-in-out;
+        -ms-transition: all 0.s1 ease-in-out;
+        -o-transition: all 0.s1 ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(2) .nav__item {
-        transition: all 0.7s ease-in-out;
-        -webkit-transition: all 0.7s ease-in-out;
-        -moz-transition: all 0.7s ease-in-out;
-        -ms-transition: all 0.7s ease-in-out;
-        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(3) .nav__item {
-        transition: all .9s ease-in-out;
-        -webkit-transition: all .9s ease-in-out;
-        -moz-transition: all .9s ease-in-out;
-        -ms-transition: all .9s ease-in-out;
-        -o-transition: all .9s ease-in-out;
+        transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(4) .nav__item {
-        transition: all 1s ease-in-out;
-        -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -ms-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(5) .nav__item {
-        transition: all 1.1s ease-in-out;
-        -webkit-transition: all 1.1s ease-in-out;
-        -moz-transition: all 1.1s ease-in-out;
-        -ms-transition: all 1.1s ease-in-out;
-        -o-transition: all 1.1s ease-in-out;
+        transition: all .5s ease-in-out;
+        -webkit-transition: all .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out;
+        -ms-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(6) .nav__item {
-        transition: all 1.15s ease-in-out;
-        -webkit-transition: all 1.15s ease-in-out;
-        -moz-transition: all 1.15s ease-in-out;
-        -ms-transition: all 1.15s ease-in-out;
-        -o-transition: all 1.15s ease-in-out;
+        transition: all .6s ease-in-out;
+        -webkit-transition: all .6s ease-in-out;
+        -moz-transition: all .6s ease-in-out;
+        -ms-transition: all .6s ease-in-out;
+        -o-transition: all .6s ease-in-out;
     }
 
     header .nav__items ul li:nth-of-type(7) .nav__item {
-        transition: all 1.6s ease-in-out;
-        -webkit-transition: all 1.6s ease-in-out;
-        -moz-transition: all 1.6s ease-in-out;
-        -ms-transition: all 1.6s ease-in-out;
-        -o-transition: all 1.6s ease-in-out;
+        transition: all .7s ease-in-out;
+        -webkit-transition: all .7s ease-in-out;
+        -moz-transition: all .7s ease-in-out;
+        -ms-transition: all .7s ease-in-out;
+        -o-transition: all .7s ease-in-out;
+    }
+
+    header .nav__items ul li:nth-of-type(8) .nav__item {
+        transition: all .8s ease-in-out;
+        -webkit-transition: all .8s ease-in-out;
+        -moz-transition: all .8s ease-in-out;
+        -ms-transition: all .8s ease-in-out;
+        -o-transition: all .8s ease-in-out;
     }
 
     header .nav__items ul a {
         padding: 0px 0px;
         margin: 15px 0px;
-        font-size: 18px;
+        /* font-size: 18px; */
         line-height: 18px;
         width: 100%;
         display: block;
@@ -2119,7 +2159,7 @@ header .social a:hover {
     label,
     blockquote,
     span {
-        font-size: 16px;
+        font-size: 1em;
         line-height: 28px;
     }
 
@@ -2130,7 +2170,7 @@ header .social a:hover {
 
     a,
     button {
-        font-size: 16px;
+        font-size: 1em;
     }
 
     h1,
@@ -2173,6 +2213,7 @@ header .social a:hover {
         font-size: 24px;
         line-height: 34px;
         margin-bottom: 25px;
+        text-align: center;
     }
 
     .hero .hero__title,
@@ -2182,7 +2223,7 @@ header .social a:hover {
     }
 
     .hero .hero__text {
-        font-size: 18px;
+        /* font-size: 18px; */
         line-height: 28px;
     }
 
@@ -2223,7 +2264,7 @@ header .social a:hover {
     label,
     blockquote,
     span {
-        font-size: 16px;
+        font-size: 1em;
         line-height: 28px;
     }
 
@@ -2234,7 +2275,7 @@ header .social a:hover {
 
     a,
     button {
-        font-size: 16px;
+        font-size: 1em;
     }
 
     h1,
@@ -2270,7 +2311,7 @@ header .social a:hover {
     }
 
     header .nav {
-        padding: 25px 20px;
+        padding: 18px 20px;
     }
 
     header .nav__logo {
@@ -2288,7 +2329,7 @@ header .social a:hover {
 
     header .nav__items ul a {
         margin: 10px 0px;
-        font-size: 16px;
+        font-size: 1em;
         line-height: 16px;
     }
 
@@ -2297,7 +2338,7 @@ header .social a:hover {
     }
 
     .section .section__inner-content {
-        padding: 160px 0px 160px;
+        padding: 120px 0px 160px;
     }
 
     .experiences .experience__content-tab {
@@ -2324,7 +2365,7 @@ header .social a:hover {
     label,
     blockquote,
     span {
-        font-size: 16px;
+        font-size: 1em;
         line-height: 28px;
     }
 
@@ -2335,7 +2376,7 @@ header .social a:hover {
 
     a,
     button {
-        font-size: 16px;
+        font-size: 1em;
     }
 
     h1,
@@ -2371,7 +2412,7 @@ header .social a:hover {
     }
 
     .hero .section__inner .section__inner-content {
-        background-position: center bottom -100px;
+        background-position: center bottom;
     }
 
     .hero .hero__content {
@@ -2400,8 +2441,9 @@ header .social a:hover {
     }
 
     .hero .hero__text {
-        font-size: 16px;
+        font-size: 1em;
         line-height: 26px;
+        text-align: center;
     }
 
     .hero .hero__cta {

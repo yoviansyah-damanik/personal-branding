@@ -54,7 +54,10 @@ class Index extends Component
                 ->where('tag_details.tag_id', $this->tag_id);
 
         if ($this->status != 'all')
-            $blogs = $blogs->where('status', $this->status);
+            if ($this->status == 'published')
+                $blogs = $blogs->published();
+            else
+                $blogs = $blogs->drafted();
 
         $blogs = $blogs->paginate(config('app.pagination_limit', 12));
 

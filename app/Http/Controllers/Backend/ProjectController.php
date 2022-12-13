@@ -4,9 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use Exception;
 use Throwable;
-use App\Models\Sector;
+use App\Models\Company;
 use App\Models\Project;
-use App\Models\SectorDetail;
 use Illuminate\Http\Request;
 use App\Helpers\GeneralHelper;
 use Illuminate\Validation\Rule;
@@ -29,10 +28,9 @@ class ProjectController extends Controller
 
     public function create()
     {
-        $sectors = Sector::all();
-
+        $companies = Company::all();
         return view('backend.pages.project.create', [
-            'sectors' => $sectors,
+            'companies' => $companies
         ]);
     }
 
@@ -42,10 +40,12 @@ class ProjectController extends Controller
             [
                 'image' => 'required|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
-                'body' => 'required',
-                'sectors' => 'required|array',
-                'sectors.*' => Rule::in(Sector::get()->pluck('id')),
-                'url' => 'nullable|url'
+                'description' => 'required',
+                'url' => 'nullable|url',
+                'company' => [
+                    'required',
+                    Rule::in(Company::get()->pluck('id'))
+                ]
             ]
         );
 
@@ -55,21 +55,14 @@ class ProjectController extends Controller
             DB::transaction(function () use ($request, $slug) {
                 $filename = $request->file('image')->store('project-images', 'public');
 
-                $project = Project::create([
+                Project::create([
                     'title' => $request->title,
-                    'body' => $request->body,
+                    'description' => $request->description,
+                    'company_id' => $request->company,
                     'image' => $filename,
                     'url' => $request->url,
                     'slug' => $slug
                 ]);
-
-                if ($request->sectors)
-                    foreach ($request->sectors as $sector) {
-                        SectorDetail::create([
-                            'project_id' => $project->id,
-                            'sector_id' => $sector
-                        ]);
-                    }
             });
 
             DB::commit();
@@ -88,11 +81,11 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        $sectors = Sector::all();
+        $companies = Company::all();
 
         return view('backend.pages.project.edit', [
             'project' => $project,
-            'sectors' => $sectors,
+            'companies' => $companies
         ]);
     }
 
@@ -102,40 +95,34 @@ class ProjectController extends Controller
             [
                 'image' => 'nullable|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
-                'body' => 'required',
-                'sectors' => 'required|array',
-                'sectors.*' => Rule::in(Sector::get()->pluck('id')),
-                'url' => 'nullable|url'
+                'description' => 'required',
+                'url' => 'nullable|url',
+                'company' => [
+                    'required',
+                    Rule::in(Company::get()->pluck('id'))
+                ]
             ]
         );
 
         DB::beginTransaction();
         try {
             DB::transaction(function () use ($request, $project) {
-                if ($request->file('image')) {
-                    GeneralHelper::delete_image($project->image);
-                    $filename = $request->file('image')->store('project-images', 'public');
-                    $project->image = $filename;
-                }
+
 
                 $project->slug = null;
                 $project->title = $request->title;
-                $project->body = $request->body;
+                $project->description = $request->description;
+                $project->company_id = $request->company;
                 $project->url = $request->url;
                 $project->save();
-
-                if ($request->sectors) {
-                    SectorDetail::where('project_id', $project->id)
-                        ->delete();
-
-                    foreach ($request->sectors as $sector) {
-                        SectorDetail::create([
-                            'project_id' => $project->id,
-                            'sector_id' => $sector
-                        ]);
-                    }
-                }
             });
+
+            if ($request->file('image')) {
+                GeneralHelper::delete_image($project->image);
+                $filename = $request->file('image')->store('project-images', 'public');
+                $project->image = $filename;
+                $project->save();
+            }
 
             $project = $project->refresh();
             DB::commit();

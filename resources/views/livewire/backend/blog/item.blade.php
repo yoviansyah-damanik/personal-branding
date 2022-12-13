@@ -4,23 +4,25 @@
             <div class="article-image">
                 <img src="{{ $blog->image_path }}" alt="{{ $blog->title }} Image">
             </div>
-            <div class="article-badge d-flex">
+            <div class="article-badge">
                 @if ($blog->status == 1)
-                    <button class="article-badge-item bg-success" wire:click="$emitUp('set_status_blog',1)">
+                    <button class="article-badge-item bg-success" wire:click="$emitUp('set_status_blog','published')">
                         <i class="fas fa-check"></i>
                         {{ __('Published') }}
                     </button>
                 @else
-                    <button class="article-badge-item bg-warning" wire:click="$emitUp('set_status_blog',0)">
+                    <button class="article-badge-item bg-warning" wire:click="$emitUp('set_status_blog','drafted')">
                         <i class="fas fa-file"></i>
-                        {{ __('Draft') }}
+                        {{ __('Drafted') }}
                     </button>
                 @endif
-                <button wire:click="$emitUp('filter_by_category',{{ $blog->category_id }})"
-                    class="ml-2 article-badge-item bg-dark">
-                    <i class="fas fa-shapes"></i>
-                    {{ $blog->category->name }}
-                </button>
+                <div>
+                    <button wire:click="$emitUp('filter_by_category',{{ $blog->category_id }})"
+                        class="mt-2 article-badge-item bg-dark">
+                        <i class="fas fa-shapes"></i>
+                        {{ $blog->category->name }}
+                    </button>
+                </div>
             </div>
         </div>
         <div class="article-details">

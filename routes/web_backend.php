@@ -1,16 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\JobController;
 use App\Http\Controllers\Backend\TagController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\SectorController;
+use App\Http\Controllers\Backend\SocialController;
 use App\Http\Controllers\Backend\AccountController;
+use App\Http\Controllers\Backend\CompanyController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\GeneralController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\HomepageController;
 use App\Http\Controllers\Backend\ExperienceController;
+use App\Http\Controllers\Backend\OrganizationController;
 
 Route::group(
     [
@@ -61,7 +64,7 @@ Route::group(
             });
 
         // PROJECT
-        Route::middleware('sector_check')
+        Route::middleware('company_check')
             ->controller(ProjectController::class)
             ->group(function () {
                 Route::get('/project', 'index')
@@ -91,20 +94,98 @@ Route::group(
                     ->name('sector.delete');
             });
 
+        // COMPANY
+        Route::middleware('sector_check')->controller(CompanyController::class)
+            ->group(function () {
+                Route::get('/company', 'index')
+                    ->name('company');
+                Route::get('/company/create', 'create')
+                    ->name('company.create');
+                Route::post('/company/store', 'store')
+                    ->name('company.store');
+                Route::get('/company/edit/{company:slug}', 'edit')
+                    ->name('company.edit');
+                Route::put('/company/update/{company:slug}', 'update')
+                    ->name('company.update');
+                Route::delete('/company/delete/{company:slug}', 'delete')
+                    ->name('company.delete');
+                Route::get('/company/{company:slug}', 'show')
+                    ->name('company.show');
+            });
+
         // EXPERIENCE
         Route::controller(ExperienceController::class)
             ->group(function () {
                 Route::get('/experience', 'index')
                     ->name('experience');
+                Route::get('/experience/create', 'create')
+                    ->name('experience.create');
+                Route::post('/experience/store', 'store')
+                    ->name('experience.store');
+                Route::get('/experience/edit/{experience:slug}', 'edit')
+                    ->name('experience.edit');
+                Route::put('/experience/update/{experience:slug}', 'update')
+                    ->name('experience.update');
+                Route::delete('/experience/delete/{experience:slug}', 'delete')
+                    ->name('experience.delete');
+                Route::get('/experience/{experience:slug}', 'show')
+                    ->name('experience.show');
             });
 
-        // JOB
-        Route::middleware('experience_check')
-            ->controller(JobController::class)
+        // ORGANIZATION
+        Route::controller(OrganizationController::class)
             ->group(function () {
-                Route::get('/job', 'index')
-                    ->name('job');
+                Route::get('/organization', 'index')
+                    ->name('organization');
+                Route::get('/organization/create', 'create')
+                    ->name('organization.create');
+                Route::post('/organization/store', 'store')
+                    ->name('organization.store');
+                Route::get('/organization/edit/{organization:slug}', 'edit')
+                    ->name('organization.edit');
+                Route::put('/organization/update/{organization:slug}', 'update')
+                    ->name('organization.update');
+                Route::delete('/organization/delete/{organization:slug}', 'delete')
+                    ->name('organization.delete');
+                Route::get('/organization/{organization:slug}', 'show')
+                    ->name('organization.show');
             });
+
+        // SOCIAL
+        Route::controller(SocialController::class)
+            ->group(function () {
+                Route::get('/social', 'index')
+                    ->name('social');
+                Route::get('/social/create', 'create')
+                    ->name('social.create');
+                Route::post('/social/store', 'store')
+                    ->name('social.store');
+                Route::get('/social/edit/{social:slug}', 'edit')
+                    ->name('social.edit');
+                Route::put('/social/update/{social:slug}', 'update')
+                    ->name('social.update');
+                Route::delete('/social/delete/{social:slug}', 'delete')
+                    ->name('social.delete');
+                Route::get('/social/{social:slug}', 'show')
+                    ->name('social.show');
+            });
+
+        // CONTACT
+        Route::controller(ContactController::class)
+            ->group(function () {
+                Route::get('/contact', 'index')
+                    ->name('contact');
+                Route::get('/contact/{contact:ticket_number}', 'show')
+                    ->name('contact.show');
+            });
+        // JOB
+        // Route::middleware('experience_check')
+        //     ->controller(JobController::class)
+        // Route::controller(JobController::class)
+        //     ->group(function () {
+        //         Route::get('/job', 'index')
+        //             ->name('job');
+        //     });
 
         // ACCOUNT
         Route::controller(AccountController::class)

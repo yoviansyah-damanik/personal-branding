@@ -25,8 +25,8 @@ class Sector extends Model
         return 'slug';
     }
 
-    public function projects()
+    public function companies()
     {
-        return $this->hasManyThrough(Project::class, SectorDetail::class, 'sector_id', 'id', 'id', 'project_id');
+        return $this->hasManyThrough(Company::class, SectorDetail::class, 'sector_id', 'id', 'id', 'company_id');
     }
 }

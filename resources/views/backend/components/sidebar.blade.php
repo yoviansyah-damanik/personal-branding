@@ -34,36 +34,44 @@
                 </ul>
             </li>
             <li
-                class="nav-item dropdown {{ Request::routeIs('dashboard.project*') || Request::routeIs('dashboard.sector*') ? 'active' : '' }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-briefcase"></i>
-                    <span>{{ __('Projects') }}</span></a>
+                class="nav-item dropdown {{ Request::routeIs('dashboard.company*') || Request::routeIs('dashboard.project*') || Request::routeIs('dashboard.sector*') ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                        class="fas fa-building-user"></i>
+                    <span>{{ __('Companies') }}</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ Request::routeIs('dashboard.project*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('dashboard.project') }}">
-                            </i>{{ __('Projects') }}</a>
+                    <li class="{{ Request::routeIs('dashboard.company*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('dashboard.company') }}">
+                            {{ __('Companies') }}</a>
                     </li>
                     <li class="{{ Request::routeIs('dashboard.sector*') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ route('dashboard.sector') }}">
-                            </i>{{ __('Sectors') }}</a>
+                            {{ __('Sectors') }}</a>
+                    </li>
+                    <li class="{{ Request::routeIs('dashboard.project*') ? 'active' : '' }}">
+                        <a class="nav-link" href="{{ route('dashboard.project') }}">
+                            {{ __('Projects') }}</a>
                     </li>
                 </ul>
             </li>
-            <li
-                class="nav-item dropdown {{ Request::routeIs('dashboard.experience*') || Request::routeIs('dashboard.job*') ? 'active' : '' }}">
-                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                        class="fas fa-bars-progress"></i>
-                    <span>{{ __('Experiences') }}</span></a>
-                <ul class="dropdown-menu">
-                    <li class="{{ Request::routeIs('dashboard.experience*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('dashboard.experience') }}">
-                            </i>{{ __('Experiences') }}</a>
-                    </li>
-                    <li class="{{ Request::routeIs('dashboard.job*') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ route('dashboard.job') }}">
-                            </i>{{ __('Jobs') }}</a>
-                    </li>
-                </ul>
+            <li class="nav-item {{ Request::routeIs('dashboard.experience*') ? 'active' : '' }}">
+                <a href="{{ route('dashboard.experience') }}" class="nav-link">
+                    <i class="fas fa-person-walking-luggage"></i><span>{{ __('Experiences') }}</span></a>
             </li>
+            <li class="nav-item {{ Request::routeIs('dashboard.organization*') ? 'active' : '' }}">
+                <a href="{{ route('dashboard.organization') }}" class="nav-link">
+                    <i class="fas fa-users-rays"></i><span>{{ __('Organizations') }}</span></a>
+            </li>
+            <li class="nav-item {{ Request::routeIs('dashboard.social*') ? 'active' : '' }}">
+                <a href="{{ route('dashboard.social') }}" class="nav-link">
+                    <i class="fas fa-people-carry-box"></i><span>{{ __('Socials') }}</span></a>
+            </li>
+            {{-- CONTACT HEADER --}}
+            <li class="menu-header">{{ __('Responses') }}</li>
+            <li class="nav-item {{ Request::routeIs('dashboard.contact*') ? 'active' : '' }}">
+                <a href="{{ route('dashboard.contact') }}" class="nav-link">
+                    <i class="fas fa-book"></i><span>{{ __('Contact') }}</span></a>
+            </li>
+            {{-- SETTINGS HEADER --}}
             <li class="menu-header">{{ __('Settings') }}</li>
             <li class="nav-item {{ Request::routeIs('dashboard.account') ? 'active' : '' }}">
                 <a href="{{ route('dashboard.account') }}" class="nav-link"><i

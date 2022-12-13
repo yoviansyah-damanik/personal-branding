@@ -50,10 +50,10 @@
                                     // Audio
                                     $(settings.preview_box).html(
                                         "<audio controls><source src='" +
-                                            loadedFile.result +
-                                            "' type='" +
-                                            file.type +
-                                            "' />Your browser does not support the audio element.</audio>"
+                                        loadedFile.result +
+                                        "' type='" +
+                                        file.type +
+                                        "' />Your browser does not support the audio element.</audio>"
                                     );
                                 } else {
                                     alert(

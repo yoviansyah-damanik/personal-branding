@@ -22,7 +22,7 @@
             <div class="section-body">
                 <h2 class="section-title">{{ __('Overview') }}</h2>
                 <p class="section-lead">
-                    {{ __('General settings such as, site title, site description, address and so on.') }}
+                    {{ __('General settings such as site title, site description, address and so on.') }}
                 </p>
 
                 <livewire:backend.general.site />
@@ -32,7 +32,26 @@
 @endsection
 
 @push('scripts')
-    <!-- JS Libraies -->
+    <script src="{{ asset('backend-assets/library/upload-preview/upload-preview.js') }}"></script>
+    <script type="text/javascript">
+        $.uploadPreview({
+            input_field: "#image-upload",
+            preview_box: "#image-preview",
+            label_field: "#image-label",
+            label_default: "{{ __('Choose File') }}",
+            label_selected: "{{ __('Change File') }}",
+            no_label: false,
+            success_callback: null
+        });
 
-    <!-- Page Specific JS File -->
+        $.uploadPreview({
+            input_field: "#image-upload-2",
+            preview_box: "#image-preview-2",
+            label_field: "#image-label-2",
+            label_default: "{{ __('Choose File') }}",
+            label_selected: "{{ __('Change File') }}",
+            no_label: false,
+            success_callback: null
+        });
+    </script>
 @endpush

@@ -31,7 +31,7 @@
                             </div>
                             <div class="card-body">
                                 <h4>{{ __('Site') }}</h4>
-                                <p>{{ __('General settings such as, site title, site description, address and so on.') }}
+                                <p>{{ __('General settings such as site title, site description, address and so on.') }}
                                 </p>
                                 <a href="{{ route('dashboard.general.site') }}" class="card-cta">{{ __('Change Setting') }}
                                     <i class="fas fa-chevron-right"></i></a>

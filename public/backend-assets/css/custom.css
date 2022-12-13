@@ -55,6 +55,7 @@
 }
 
 .article-details .tags .tag-item {
+    flex: 0 0 auto;
     position: relative;
     color: #f2f2f2;
     font-size: .875em;
@@ -104,6 +105,33 @@ article.article-content .content .subtitle {
     font-size: .875rem;
 }
 
+article.article-content .content .subtitle .position {
+    background: var(--primary);
+    padding: .125rem .75rem;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+article.article-content .content .subtitle .period {
+    background: var(--teal);
+    padding: .125rem .75rem;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+article.article-content .content .subtitle .divide::before {
+    content: '|';
+    margin: 0 .5rem;
+}
+
 article.article-content .content .subtitle .category {
     padding: .125rem .5rem;
     background: var(--danger);
@@ -113,11 +141,6 @@ article.article-content .content .subtitle .category {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    margin-right: .5rem;
-}
-
-article.article-content .content .subtitle .link {
-    margin-right: .5rem;
 }
 
 article.article-content .content .subtitle .link a {
@@ -132,8 +155,7 @@ article.article-content .content .subtitle .link a {
 }
 
 article.article-content .content .subtitle .time {
-    margin-left: .5rem;
-    margin-right: .5rem;
+    /*  */
 }
 
 article.article-content .content .tags {

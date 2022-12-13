@@ -11,3 +11,10 @@ $(document).on('tooltipReset', () => {
     $(".tooltip").remove()
     $("[data-toggle='tooltip']").tooltip();
 })
+
+$(document).on('selectricReset', () => {
+    $(".selectric").selectric({
+        disableOnMobile: false,
+        nativeOnMobile: false
+    });
+})

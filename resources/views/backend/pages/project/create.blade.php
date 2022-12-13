@@ -26,10 +26,8 @@
                     <div class="breadcrumb-item">{{ __('Create') }}</div>
                 </div>
             </div>
-
             <div class="section-body">
                 <h2 class="section-title">{{ __('Create Project') }}</h2>
-
                 <div class="card">
                     <form action="{{ route('dashboard.project.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
@@ -54,7 +52,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="title">{{ __('Title') }}</label>
+                                                <label for="title">{{ __('Project Title') }}</label>
                                                 <input type="text" name="title" id="title" class="form-control"
                                                     value="{{ old('title') }}" required>
                                                 @error('title')
@@ -66,17 +64,17 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="sectors">{{ __('Sectors') }}</label>
-                                                <select name="sectors[]" id="sectors" class="form-control selectric"
-                                                    multiple required>
+                                                <label for="company">{{ __('Company') }}</label>
+                                                <select name="company" id="company" class="form-control selectric"
+                                                    required>
                                                     <option disabled hidden>--{{ __('Please select') }}--</option>
-                                                    @foreach ($sectors as $sector)
-                                                        <option value="{{ $sector->id }}"
-                                                            {{ $sector->id == old('sectors') ? 'selected' : '' }}>
-                                                            {{ $sector->name }}</option>
+                                                    @foreach ($companies as $company)
+                                                        <option value="{{ $company->id }}"
+                                                            {{ $company->id == old('company') ? 'selected' : '' }}>
+                                                            {{ $company->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                @error('sectors')
+                                                @error('company')
                                                     <div class="small text-danger">
                                                         {{ $message }}
                                                     </div>
@@ -97,9 +95,9 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="body">{{ __('Body') }}</label>
-                                                <textarea class="summernote" name="body" required>{{ old('body') }}</textarea>
-                                                @error('body')
+                                                <label for="description">{{ __('Description') }}</label>
+                                                <textarea class="summernote" name="description" required>{{ old('description') }}</textarea>
+                                                @error('description')
                                                     <div class="small text-danger">
                                                         {{ $message }}
                                                     </div>

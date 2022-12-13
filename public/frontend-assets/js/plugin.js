@@ -55,7 +55,7 @@
                 scrollOverflow: true,
                 css3: true,
                 scrollingSpeed: 1000,
-                anchors: ["home", "about", "projects", "experiences", "blogs", "contact"],
+                anchors: ["home", "about", "company", "experience", "organization", "social", "blog", "contact"],
                 menu: ".nav__items",
                 onLeave: function (index, nextIndex, direction) {
                     $(".section [data-aos]").each(function () {
@@ -88,7 +88,7 @@
         // profession type js
         if ($(".typed").length) {
             $(".typed").typed({
-                strings: ["Initiator", "Clever", "Changer"],
+                strings: ["Engineer", "Entrepreneur", "Motivator", "Activist", "Consultant"],
                 typeSpeed: 300,
                 backDelay: 900,
                 loop: true,
@@ -105,8 +105,8 @@
             });
         }
 
-        // project slider
-        $(".projects__slider")
+        // company slider
+        $(".companies__slider")
             .not(".slick-initialized")
             .slick({
                 infinite: true,
@@ -116,13 +116,13 @@
                 slidesToScroll: 1,
                 arrows: true,
                 dots: false,
-                prevArrow: $(".prev-project-item"),
-                nextArrow: $(".next-project-item"),
+                prevArrow: $(".prev-company-item"),
+                nextArrow: $(".next-company-item"),
                 centerMode: true,
                 centerPadding: "0px",
             });
 
-        // project slider
+        // blog slider
         $(".blogs__slider")
             .not(".slick-initialized")
             .slick({
@@ -139,7 +139,60 @@
                 centerPadding: "0px",
             });
 
+        $(".organizations__slider")
+            .not(".slick-initialized")
+            .slick({
+                infinite: true,
+                autoplay: false,
+                focusOnSelect: true,
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1119,
+                        settings: {
+                            slidesToShow: 4,
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                ],
+                arrows: true,
+                dots: false,
+                prevArrow: $(".prev-organization-item"),
+                nextArrow: $(".next-organization-item"),
+                centerMode: false,
+                centerPadding: "0px",
+            });
+
+        // social slider
+        $(".socials__slider")
+            .not(".slick-initialized")
+            .slick({
+                infinite: true,
+                autoplay: true,
+                focusOnSelect: true,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: true,
+                dots: false,
+                prevArrow: $(".prev-social-item"),
+                nextArrow: $(".next-social-item"),
+                centerMode: true,
+                centerPadding: "0px",
+            });
+
         // select price
-        $(".price-range").niceSelect();
+        // $(".price-range").niceSelect();
     });
 })(jQuery);

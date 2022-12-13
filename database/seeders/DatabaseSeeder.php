@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(ConfigurationSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(IconSeeder::class);
         // Category::factory(5)->create();
         // Blog::factory(200)->create();
         // Tag::factory(50)->create();

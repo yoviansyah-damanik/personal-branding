@@ -29,7 +29,6 @@
 
             <div class="section-body">
                 <h2 class="section-title">{{ __('Edit Project') }}</h2>
-
                 <div class="card">
                     <form action="{{ route('dashboard.project.update', $project->slug) }}" method="post"
                         enctype="multipart/form-data">
@@ -38,22 +37,17 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-xl-3 col-lg-4">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="image">{{ __('Image') }}</label>
-                                                <div id="image-preview" class="image-preview">
-                                                    <label for="image-upload"
-                                                        id="image-label">{{ __('Choose File') }}</label>
-                                                    <input type="file" name="image" id="image-upload"
-                                                        accept="image/*" />
-                                                    @error('image')
-                                                        <div class="small text-danger">
-                                                            {{ $message }}
-                                                        </div>
-                                                    @enderror
+                                    <div class="form-group">
+                                        <label for="image">{{ __('Image') }}</label>
+                                        <div id="image-preview" class="image-preview"
+                                            style="background-image:url('{{ $project->image_path }}'); background-size:cover; background-position:center center;">
+                                            <label for="image-upload" id="image-label">{{ __('Choose File') }}</label>
+                                            <input type="file" name="image" id="image-upload" accept="image/*" />
+                                            @error('image')
+                                                <div class="small text-danger">
+                                                    {{ $message }}
                                                 </div>
-                                            </div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
@@ -61,7 +55,7 @@
                                     <div class="row">
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="title">{{ __('Title') }}</label>
+                                                <label for="title">{{ __('Project Title') }}</label>
                                                 <input type="text" name="title" id="title" class="form-control"
                                                     value="{{ old('title', $project->title) }}" required>
                                                 @error('title')
@@ -73,17 +67,17 @@
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-group">
-                                                <label for="sectors">{{ __('Sectors') }}</label>
-                                                <select name="sectors[]" class="form-control selectric" multiple="">
+                                                <label for="company">{{ __('Company') }}</label>
+                                                <select name="company" id="company" class="form-control selectric"
+                                                    required>
                                                     <option disabled hidden>--{{ __('Please select') }}--</option>
-                                                    @foreach ($sectors as $sector)
-                                                        <option value="{{ $sector->id }}"
-                                                            {{ in_array($sector->id, old('sectors', $project->sectors->pluck('id')->toArray())) ? 'selected' : '' }}>
-                                                            {{ $sector->name }}
-                                                        </option>
+                                                    @foreach ($companies as $company)
+                                                        <option value="{{ $company->id }}"
+                                                            {{ $company->id == old('company', $project->company_id) ? 'selected' : '' }}>
+                                                            {{ $company->name }}</option>
                                                     @endforeach
                                                 </select>
-                                                @error('sectors')
+                                                @error('company')
                                                     <div class="small text-danger">
                                                         {{ $message }}
                                                     </div>
@@ -104,9 +98,9 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <label for="body">{{ __('Body') }}</label>
-                                                <textarea class="summernote" name="body" required>{{ old('body', $project->body) }}</textarea>
-                                                @error('body')
+                                                <label for="description">{{ __('Description') }}</label>
+                                                <textarea class="summernote" name="description" required>{{ old('description', $project->description) }}</textarea>
+                                                @error('description')
                                                     <div class="small text-danger">
                                                         {{ $message }}
                                                     </div>
@@ -116,7 +110,7 @@
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary">
                                                 <i class="fas fa-save"></i>
-                                                {{ __('Update Project') }}
+                                                {{ __('Edit Project') }}
                                             </button>
                                         </div>
                                     </div>

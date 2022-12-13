@@ -16,7 +16,7 @@ class SectorController extends Controller
 
     public function delete(Sector $sector)
     {
-        if ($sector->projects->count() > 0) {
+        if ($sector->companies->count() > 0) {
             Alert::warning(__('Cannot delete data'), __("Cant remove the sector because the sector has multiple blogs."));
             return back();
         }

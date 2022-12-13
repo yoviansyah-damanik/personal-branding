@@ -50,12 +50,12 @@
                                             <i class="fas fa-shapes"></i>
                                             {{ $blog->category->name }}
                                         </div>
-                                        |
+                                        <div class="divide"></div>
                                         <div class="time">
                                             <i class="fas fa-clock"></i>
                                             {{ $blog->created_at->diffForHumans() }}
                                         </div>
-                                        |
+                                        <div class="divide"></div>
                                         <div class="time">
                                             @if ($blog->published_at)
                                                 {{ __('Published at') }}

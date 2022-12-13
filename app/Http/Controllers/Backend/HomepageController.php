@@ -18,8 +18,8 @@ class HomepageController extends Controller
     public function index()
     {
         $user_count = User::count();
-        $blog_draft_count = Blog::draft()->count();
-        $blog_publish_count = Blog::publish()->count();
+        $blog_draft_count = Blog::drafted()->count();
+        $blog_publish_count = Blog::published()->count();
         $tag_count = Tag::count();
         $experience_count = Experience::count();
         $project_count = Project::count();

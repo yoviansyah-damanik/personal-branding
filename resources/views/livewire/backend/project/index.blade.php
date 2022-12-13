@@ -20,7 +20,8 @@
                     <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row">
                         <ul class="nav nav-pills align-items-center">
                             <li class="nav-item mr-3">
-                                <button class="nav-link bg-danger text-white" wire:click="refresh_all">
+                                <button class="nav-link bg-danger text-white" wire:click="refresh_all"
+                                    wire:loading.attr="disabled">
                                     {{ __('Refresh All') }}
                                 </button>
                             </li>
@@ -32,29 +33,18 @@
                                 </button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link @if ($status == 0) active @endif"
-                                    wire:click="set_status(0)">
+                                <button class="nav-link @if ($status == 'drafted') active @endif"
+                                    wire:click="set_status('drafted')">
                                     {{ __('Drafted') }}
                                     <span class="badge badge-primary">{{ $project_drafted }}</span>
                                 </button>
                             </li>
                             <li class="nav-item mr-3">
-                                <button class="nav-link @if ($status == 1) active @endif"
-                                    wire:click="set_status(1)">
+                                <button class="nav-link @if ($status == 'published') active @endif"
+                                    wire:click="set_status('published')">
                                     {{ __('Published') }}
                                     <span class="badge badge-primary">{{ $project_published }}</span>
                                 </button>
-                            </li>
-                            <li class="nav-item">
-                                <div class="row align-items-center mr-3" style="min-width:250px;" wire:ignore>
-                                    <label class="col-5 mb-0 text-right" for="sector">{{ __('Sector') }}</label>
-                                    <select class="col-7 form-control select h-auto py-1 px-2" id="sector">
-                                        <option value="all">--{{ __('Select All') }}--</option>
-                                        @foreach ($sectors as $sector)
-                                            <option value="{{ $sector->id }}">{{ $sector->name }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
                             </li>
                         </ul>
                         <a class="mt-3 mt-lg-0 btn btn-primary" href="{{ route('dashboard.project.create') }}">

@@ -145,8 +145,15 @@
     <script src="{{ asset('backend-assets/library/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
     <script src="{{ asset('backend-assets/library/upload-preview/upload-preview.js') }}"></script>
 
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('backend-assets/js/page/features-post-create.js') }}"></script>
-
-    <!-- Page Specific JS File -->
+    <script type="text/javascript">
+        $.uploadPreview({
+            input_field: "#image-upload",
+            preview_box: "#image-preview",
+            label_field: "#image-label",
+            label_default: "{{ __('Choose File') }}",
+            label_selected: "{{ __('Change File') }}",
+            no_label: false,
+            success_callback: null
+        });
+    </script>
 @endpush

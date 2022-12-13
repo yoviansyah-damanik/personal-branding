@@ -43,7 +43,7 @@ class BlogController extends Controller
     {
         $request->validate(
             [
-                'image' => 'required|image|dimensions:rasio=1/1',
+                'image' => 'required|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
                 'body' => 'required',
                 'tags' => 'nullable|array',
@@ -108,7 +108,7 @@ class BlogController extends Controller
     {
         $request->validate(
             [
-                'image' => 'nullable|image|dimensions:rasio=1/1',
+                'image' => 'nullable|image|dimensions:rasio=7/4',
                 'title' => 'required|max:200',
                 'body' => 'required',
                 'tags' => 'nullable|array',

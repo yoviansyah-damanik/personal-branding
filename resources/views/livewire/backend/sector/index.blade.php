@@ -21,7 +21,7 @@
                             {{ $sector->name }}
                         </div>
                         <div class="small font-italic">
-                            {{ __('Project Total') }}: {{ $sector->projects_count }}
+                            {{ __('Company Total') }}: {{ $sector->companies_count }}
                         </div>
 
                         <div class="mt-1">

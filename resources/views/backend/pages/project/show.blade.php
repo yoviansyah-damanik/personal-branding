@@ -47,22 +47,26 @@
                                 <div class="content">
                                     <div class="title">{{ $project->title }}</div>
                                     <div class="subtitle">
+                                        <div class="company">
+                                            {{ $project->company->name }}
+                                        </div>
+                                        <div class="divide"></div>
                                         <div class="link">
                                             @if ($project->url)
                                                 <a href="{{ $project->url }}" data-toggle="tooltip"
                                                     title="{{ __('Visit') }}" target="_blank">
-                                                    <i class="fas fa-link"></i>
+                                                    {{ $project->url }}
                                                 </a>
                                             @else
                                                 {{ __('No link added.') }}
                                             @endif
                                         </div>
-                                        |
+                                        <div class="divide"></div>
                                         <div class="time">
                                             <i class="fas fa-clock"></i>
                                             {{ $project->created_at->diffForHumans() }}
                                         </div>
-                                        |
+                                        <div class="divide"></div>
                                         <div class="time">
                                             @if ($project->published_at)
                                                 {{ __('Published at') }}
@@ -72,15 +76,8 @@
                                             @endif
                                         </div>
                                     </div>
-                                    <div class="tags">
-                                        @foreach ($project->sectors as $sector)
-                                            <div class="tag-item" style="background: {{ $sector->color }}">
-                                                {{ $sector->name }}
-                                            </div>
-                                        @endforeach
-                                    </div>
                                     <div class="body">
-                                        {!! $project->body !!}
+                                        {!! $project->description !!}
                                     </div>
                                 </div>
                             </div>

@@ -42,7 +42,8 @@
                                         <div class="col-12">
                                             <div class="form-group">
                                                 <label for="image">{{ __('Image') }}</label>
-                                                <div id="image-preview" class="image-preview">
+                                                <div id="image-preview" class="image-preview"
+                                                    style="background-image:url('{{ $blog->image_path }}'); background-size:cover; background-position:center center;">
                                                     <label for="image-upload"
                                                         id="image-label">{{ __('Choose File') }}</label>
                                                     <input type="file" name="image" id="image-upload"
@@ -147,8 +148,15 @@
     <script src="{{ asset('backend-assets/library/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
     <script src="{{ asset('backend-assets/library/upload-preview/upload-preview.js') }}"></script>
 
-    <!-- Page Specific JS File -->
-    <script src="{{ asset('backend-assets/js/page/features-post-create.js') }}"></script>
-
-    <!-- Page Specific JS File -->
+    <script type="text/javascript">
+        $.uploadPreview({
+            input_field: "#image-upload",
+            preview_box: "#image-preview",
+            label_field: "#image-label",
+            label_default: "{{ __('Choose File') }}",
+            label_selected: "{{ __('Change File') }}",
+            no_label: false,
+            success_callback: null
+        });
+    </script>
 @endpush

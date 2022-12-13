@@ -19,9 +19,9 @@ class Index extends Component
 
     public function render()
     {
-        $sectors = Sector::withCount('projects')
+        $sectors = Sector::withCount('companies')
             ->where('name', 'like', "%$this->s%")
-            ->orderBy('projects_count', 'desc')
+            ->orderBy('companies_count', 'desc')
             ->latest()
             ->paginate(config('app.pagination_limit', 25));
 

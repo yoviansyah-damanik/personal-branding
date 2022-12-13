@@ -2,13 +2,45 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Social;
+use App\Models\Company;
+use App\Models\Experience;
+use App\Models\Organization;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomepageController extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $blogs = Blog::published()
+            ->latest()
+            ->limit(3)
+            ->get();
+
+        $companies = Company::with('sectors')
+            ->published()
+            ->latest()
+            ->get();
+
+        $organizations = Organization::published()
+            ->inRandomOrder()
+            ->get();
+
+        $socials = Social::published()
+            ->latest()
+            ->get();
+
+        $experiences = Experience::published()
+            ->get();
+
+        return view('frontend.index', [
+            'companies' => $companies,
+            'organizations' => $organizations,
+            'socials' => $socials,
+            'experiences' => $experiences,
+            'blogs' => $blogs,
+        ]);
     }
 }

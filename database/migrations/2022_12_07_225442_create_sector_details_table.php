@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('sector_details', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sector_id');
-            $table->foreignId('project_id');
+            $table->foreignId('company_id');
             $table->timestamps();
         });
     }

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('company_id');
             $table->string('title');
             $table->string('slug');
-            $table->text('body');
+            $table->text('description');
             $table->string('image');
             $table->char('status', 1)->default(0);
             $table->timestamp('published_at')->nullable();

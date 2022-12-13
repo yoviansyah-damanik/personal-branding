@@ -9,4 +9,9 @@ class SocialMediaAccount extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function social_media_icon()
+    {
+        return $this->belongsTo(SocialMediaIcon::class);
+    }
 }

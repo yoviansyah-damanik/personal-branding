@@ -3,7 +3,8 @@
 @section('title', __('Tags'))
 
 @push('style')
-    <!-- CSS Libraries -->
+    <link rel="stylesheet"
+        href="{{ asset('backend-assets/library/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
 @endpush
 
 @section('main')
@@ -46,6 +47,8 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('backend-assets/library/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
+
     <script type="text/javascript">
         $('.delete-tag').on('click', (e) => {
             e.preventDefault()

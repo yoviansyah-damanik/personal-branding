@@ -1,4 +1,4 @@
-<section class="section contact" id="six">
+<section class="section contact" id="eight">
     <div class="section__inner" id="contact-wave">
         <div class="section__inner-content">
             <div class="container">
@@ -30,35 +30,8 @@
                         </div>
                     </div>
                     <div class="col-lg-6  col-xl-5 offset-xl-1">
-                        <div class="contact__form col-margin" data-aos="fade-left">
-                            <form action="#" method="post" autocomplete="off">
-                                <div class="contact__form-input">
-                                    <input type="text" name="contact_name" id="contactName"
-                                        placeholder="Enter Your Name" />
-                                </div>
-                                <div class="contact__form-input">
-                                    <input type="email" name="contact_email" id="contactEmail"
-                                        placeholder="Enter Email Address" />
-                                </div>
-                                <div class="contact__form-input">
-                                    <input type="text" name="contact_sub" id="contactSub" placeholder="Subject" />
-                                </div>
-                                <div class="contact__form-input">
-                                    <select name="price__range" id="priceRange" class="price-range">
-                                        <option value="" data-display="Select Pricing">Select Pricing
-                                        </option>
-                                        <option value="$200 - $300">$200 - $300</option>
-                                        <option value="$400 - $500">$400 - $500</option>
-                                        <option value="$600 - $700">$600 - $700</option>
-                                        <option value="$800 - $900">$900 - $900</option>
-                                        <option value="$900 - $1000">$900 - $1000</option>
-                                    </select>
-                                </div>
-                                <div class="contact__form-input">
-                                    <textarea name="contact_mess" id="contactMessage" placeholder="Write me a message"></textarea>
-                                </div>
-                                <button type="submit">Contact Me</button>
-                            </form>
+                        <div data-aos="fade-left">
+                            <livewire:frontend.contact.index />
                         </div>
                     </div>
                 </div>

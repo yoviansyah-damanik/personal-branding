@@ -30,7 +30,7 @@ class Project extends Model
     protected function excerpt(): Attribute
     {
         return new Attribute(
-            get: fn () => Str::limit(strip_tags($this->body), 200)
+            get: fn () => Str::limit(strip_tags($this->description), 200)
         );
     }
 
@@ -42,8 +42,8 @@ class Project extends Model
         );
     }
 
-    public function sectors()
+    public function company()
     {
-        return $this->hasManyThrough(Sector::class, SectorDetail::class, 'project_id', 'id', 'id', 'sector_id');
+        return $this->belongsTo(Company::class);
     }
 }

@@ -20,7 +20,8 @@
                     <div class="d-flex justify-content-between align-items-center flex-column flex-lg-row">
                         <ul class="nav nav-pills align-items-center">
                             <li class="nav-item mr-3">
-                                <button class="nav-link bg-danger text-white" wire:click="refresh_all">
+                                <button class="nav-link bg-danger text-white" wire:click="refresh_all"
+                                    wire:loading.attr="disabled">
                                     {{ __('Refresh All') }}
                                 </button>
                             </li>
@@ -32,15 +33,15 @@
                                 </button>
                             </li>
                             <li class="nav-item">
-                                <button class="nav-link @if ($status == 0) active @endif"
-                                    wire:click="set_status(0)">
+                                <button class="nav-link @if ($status == 'drafted') active @endif"
+                                    wire:click="set_status('drafted')">
                                     {{ __('Drafted') }}
                                     <span class="badge badge-primary">{{ $blog_drafted }}</span>
                                 </button>
                             </li>
                             <li class="nav-item mr-3">
-                                <button class="nav-link @if ($status == 1) active @endif"
-                                    wire:click="set_status(1)">
+                                <button class="nav-link @if ($status == 'published') active @endif"
+                                    wire:click="set_status('published')">
                                     {{ __('Published') }}
                                     <span class="badge badge-primary">{{ $blog_published }}</span>
                                 </button>

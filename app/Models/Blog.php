@@ -15,21 +15,6 @@ class Blog extends Model
     protected $guarded = ['id'];
     protected $with = ['tags', 'category'];
 
-    protected function excerpt(): Attribute
-    {
-        return new Attribute(
-            get: fn () => Str::limit(strip_tags($this->body), 200)
-        );
-    }
-
-    protected function imagePath(): Attribute
-    {
-        return new Attribute(
-            get: fn () => asset('storage/' . $this->image)
-            // get: fn () => $this->image
-        );
-    }
-
     public function sluggable(): array
     {
         return [
@@ -44,6 +29,30 @@ class Blog extends Model
         return 'slug';
     }
 
+    protected function excerpt(): Attribute
+    {
+        return new Attribute(
+            get: fn () => Str::limit(strip_tags($this->body), 200)
+        );
+    }
+
+    protected function imagePath(): Attribute
+    {
+        return new Attribute(
+            get: fn () => asset('storage/' . $this->image)
+        );
+    }
+
+    public function scopeDrafted($query)
+    {
+        return $query->where('status', 0);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', 1);
+    }
+
     public function tags()
     {
         return $this->hasManyThrough(Tag::class, TagDetail::class, 'blog_id', 'id', 'id', 'tag_id');
@@ -52,15 +61,5 @@ class Blog extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
-    }
-
-    public function scopeDraft($query)
-    {
-        return $query->where('status', 0);
-    }
-
-    public function scopePublish($query)
-    {
-        return $query->where('status', 1);
     }
 }

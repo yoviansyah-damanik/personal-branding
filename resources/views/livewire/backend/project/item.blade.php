@@ -4,6 +4,12 @@
             <div class="article-image">
                 <img src="{{ $project->image_path }}" alt="{{ $project->title }} Image">
             </div>
+            <div class="article-badge" style="top:10px;left:10px;">
+                <span class="article-badge-item bg-white text-body">
+                    <i class="fas fa-building"></i>
+                    {{ $project->company->name }}
+                </span>
+            </div>
             <div class="article-badge d-flex">
                 @if ($project->status == 1)
                     <button class="article-badge-item bg-success" wire:click="$emitUp('set_status_project',1)">
@@ -13,7 +19,7 @@
                 @else
                     <button class="article-badge-item bg-warning" wire:click="$emitUp('set_status_project',0)">
                         <i class="fas fa-file"></i>
-                        {{ __('Draft') }}
+                        {{ __('Drafted') }}
                     </button>
                 @endif
                 @if ($project->url)
@@ -38,16 +44,6 @@
             </p>
             <div class="small mb-2">
                 <i class="fas fa-clock"></i> {{ $project->created_at->diffForHumans() }}
-            </div>
-            <div class="tags">
-                @forelse ($project->sectors as $sector)
-                    <button wire:click="$emitUp('filter_by_sector',{{ $sector->id }})" class="tag-item"
-                        style="background: {{ $sector->color }}" title="{{ $sector->name }}">
-                        {{ $sector->name }}
-                    </button>
-                @empty
-                    {{ __('No embedded sectors.') }}
-                @endforelse
             </div>
             <div class="article-cta d-flex justify-content-between align-items-center">
                 <div class="d-block">
