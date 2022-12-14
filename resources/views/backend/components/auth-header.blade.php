@@ -1,4 +1,3 @@
  <div class="login-brand">
-     <img src="{{ asset('backend-assets/img/stisla-fill.svg') }}" alt="logo" width="100"
-         class="shadow-light rounded-circle">
+     <img src="{{ $_app_logo ?? asset('branding-images/logo.png') }}" alt="logo" width="250" class="img-fluid">
  </div>

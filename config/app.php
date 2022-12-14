@@ -17,6 +17,7 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
     'abb_name' => env('APP_ABB_NAME', 'APP'),
+    'description' => env('APP_DESCRIPTION', 'Personal Branding'),
     'version' => env('APP_VERSION', 'Beta'),
     'pagination_limit' => env('APP_PAGINATION_LIMIT', 25),
 

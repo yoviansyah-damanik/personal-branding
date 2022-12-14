@@ -25,15 +25,10 @@
                         </div>
 
                         <div class="mt-1">
-                            <form class="d-inline" action="{{ route('dashboard.category.delete', $category->id) }}"
-                                method="post">
-                                @csrf
-                                @method('delete')
-                                <button class="btn btn-sm btn-danger delete-category" data-toggle="tooltip"
-                                    data-placement="bottom" title="{{ __('Delete') }}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </form>
+                            <button class="btn btn-sm btn-danger" wire:click="delete_item({{ $category->id }})"
+                                data-toggle="tooltip" data-placement="bottom" title="{{ __('Delete') }}">
+                                <i class="fas fa-trash"></i>
+                            </button>
                             <button class="btn btn-sm btn-warning" data-toggle="tooltip" data-placement="bottom"
                                 title="{{ __('Edit') }}" wire:click="edit_category({{ $category->id }})">
                                 <i class="fas fa-edit"></i>

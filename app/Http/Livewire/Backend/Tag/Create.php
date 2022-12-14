@@ -65,7 +65,7 @@ class Create extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Tag was successfully created.')
+                    'text' => __('The tag was successfully created.')
                 ]
             );
         } catch (Exception $e) {

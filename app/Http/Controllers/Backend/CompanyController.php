@@ -76,7 +76,7 @@ class CompanyController extends Controller
             $request->file('image')->storeAs('company-images', $filename, 'public');
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Company was successfully created.'));
+            Alert::success(__('Successfully!'), __('The company was successfully created.'));
             return to_route('dashboard.company.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -148,7 +148,7 @@ class CompanyController extends Controller
 
             $company = $company->refresh();
             DB::commit();
-            Alert::success(__('Successfully!'), __('Company was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The company was successfully updated.'));
             return to_route('dashboard.company.show', $company->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -173,7 +173,7 @@ class CompanyController extends Controller
 
             DB::commit();
             GeneralHelper::delete_image($company->image);
-            Alert::success(__('Successfully!'), __('Company was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The company was successfully deleted.'));
             return to_route('dashboard.company');
         } catch (Exception $e) {
             DB::rollback();

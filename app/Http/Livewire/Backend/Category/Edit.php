@@ -62,7 +62,7 @@ class Edit extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Category was successfully updated.')
+                    'text' => __('The category was successfully updated.')
                 ]
             );
         } catch (Exception $e) {

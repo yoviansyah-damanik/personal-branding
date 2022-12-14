@@ -9,6 +9,9 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('frontend.pages.about.index');
+        return view('frontend.pages.about.index', [
+            '_title' => __('About'),
+            '_description' => __('Let me tell you about myself so you can get to know me better.')
+        ]);
     }
 }

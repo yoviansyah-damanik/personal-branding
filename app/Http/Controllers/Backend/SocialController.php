@@ -55,7 +55,7 @@ class SocialController extends Controller
             $request->file('image')->storeAs('social-images', $filename, 'public');
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Social was successfully created.'));
+            Alert::success(__('Successfully!'), __('The social was successfully created.'));
             return to_route('dashboard.social.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -105,7 +105,7 @@ class SocialController extends Controller
 
             $social = $social->refresh();
             DB::commit();
-            Alert::success(__('Successfully!'), __('Social was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The social was successfully updated.'));
             return to_route('dashboard.social.show', $social->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -124,7 +124,7 @@ class SocialController extends Controller
             GeneralHelper::delete_image($social->image);
             $social->delete();
 
-            Alert::success(__('Successfully!'), __('Social was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The social was successfully deleted.'));
             return to_route('dashboard.social');
         } catch (Exception $e) {
             Alert::info(__('Something went wrong!'), $e->getMessage());

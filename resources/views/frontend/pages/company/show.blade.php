@@ -61,6 +61,54 @@
                                         </div>
                                     </div>
 
+                                    <div class="blog__projects">
+                                        <div class="blog__projects_sticky">
+                                            <div class="blog__projects_title">
+                                                {{ __('Projects being worked on') }}
+                                            </div>
+                                            @if ($company->projects->count() > 0)
+                                                <div class="projects__slider">
+                                                    @foreach ($company->projects as $project)
+                                                        <a href="#{{ $project->slug }}" class="projects__slider_item">
+                                                            {{ $project->title }}
+                                                        </a>
+                                                    @endforeach
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                        <div class="blog__project_items">
+                                            @if ($company->projects->count() > 0)
+                                                @foreach ($company->projects as $project)
+                                                    <div class="blog__project_item" id="{{ $project->slug }}">
+                                                        <div class="blog__project_item_image">
+                                                            <img src="{{ $project->image_path }}"
+                                                                alt="{{ $project->title }} Image">
+                                                        </div>
+                                                        <div class="blog__project_item_detail">
+                                                            <div class="blog__project_item_detail_name">
+                                                                {{ $project->title }}
+                                                                @if ($project->url)
+                                                                    <a target="_blank" href="{{ $project->url }}">
+                                                                        <i
+                                                                            class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                                    </a>
+                                                                @endif
+                                                            </div>
+                                                            <div class="blog__project_item_detail_description">
+                                                                {!! $project->description !!}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @else
+                                                <div class="text-center">
+                                                    {{ __('No data found') }}
+                                                </div>
+                                            @endif
+                                        </div>
+
+                                    </div>
                                     <div class="divide">
                                         <div class="circle"></div>
                                     </div>
@@ -72,19 +120,25 @@
 
                                         <div class="row justify-content-center">
                                             @forelse ($random_company as $company)
-                                                <div class="col-lg-3 col-md-4 col-6">
-                                                    <div class="company__slider-single gap-1">
-                                                        <div class="company__thumb">
+                                                <div class="col-lg-4 col-md-6">
+                                                    <div class="blog__card">
+                                                        <div class="blog__image">
                                                             <img src="{{ $company->image_path }}"
                                                                 alt="{{ $company->name }} Image">
                                                         </div>
-                                                        <div class="company__slider_body">
-                                                            <div class="company__title">
+                                                        <div class="blog__body">
+                                                            <div class="blog__title">
                                                                 {{ $company->name }}
                                                             </div>
-                                                            <div class="company__period">
-                                                                {{ $company->start_period_text }} -
-                                                                {{ $company->end_period_text }}
+                                                            <div class="blog__detail">
+                                                                <div class="blog__tags">
+                                                                    @foreach ($company->sectors as $sector)
+                                                                        <div class="blog__tag"
+                                                                            style="background: {{ $sector->color }}">
+                                                                            {{ $sector->name }}
+                                                                        </div>
+                                                                    @endforeach
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <a href="{{ route('company.show', $company->slug) }}"
@@ -404,5 +458,34 @@
             );
             run();
         })();
+
+        $(".projects__slider")
+            .not(".slick-initialized")
+            .slick({
+                infinite: true,
+                autoplay: true,
+                focusOnSelect: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                ],
+                arrows: false,
+                dots: false,
+                // prevArrow: $(".prev-project-item"),
+                // nextArrow: $(".next-project-item"),
+                centerMode: false,
+                centerPadding: "0px",
+            });
     </script>
 @endpush

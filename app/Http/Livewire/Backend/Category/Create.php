@@ -55,7 +55,7 @@ class Create extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Category was successfully created.')
+                    'text' => __('The category was successfully created.')
                 ]
             );
         } catch (Exception $e) {

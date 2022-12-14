@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthenticationController extends Controller
@@ -30,10 +32,8 @@ class AuthenticationController extends Controller
 
         if (!empty($user) && Hash::check($request->password, $user->password)) {
             Auth::login($user, $request->has('remember'));
-
             $request->session()->regenerate();
-            $user->update(['last_login' => now()]);
-
+            $user->update(['last_login' => Carbon::now()]);
             return redirect()->intended('/dashboard');
         }
 
@@ -41,11 +41,13 @@ class AuthenticationController extends Controller
         return to_route('login')->withInput();
     }
 
-    public function logout($request)
+    public function logout()
     {
         Auth::logout();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        Session::invalidate();
+        Session::regenerateToken();
+
+        return to_route('login');
     }
 }

@@ -63,7 +63,7 @@ class OrganizationController extends Controller
             $request->file('image')->storeAs('organization-images', $filename, 'public');
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Organization was successfully created.'));
+            Alert::success(__('Successfully!'), __('The organization was successfully created.'));
             return to_route('dashboard.organization.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -121,7 +121,7 @@ class OrganizationController extends Controller
 
             $organization = $organization->refresh();
             DB::commit();
-            Alert::success(__('Successfully!'), __('Organization was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The organization was successfully updated.'));
             return to_route('dashboard.organization.show', $organization->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -140,7 +140,7 @@ class OrganizationController extends Controller
             GeneralHelper::delete_image($organization->image);
             $organization->delete();
 
-            Alert::success(__('Successfully!'), __('Organization was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The organization was successfully deleted.'));
             return to_route('dashboard.organization');
         } catch (Exception $e) {
             Alert::info(__('Something went wrong!'), $e->getMessage());

@@ -15,7 +15,8 @@ class CompanyController extends Controller
             ->get();
 
         return view('frontend.pages.company.index', [
-            'companies' => $companies
+            'companies' => $companies,
+            '_title' => __('Companies'),
         ]);
     }
 
@@ -28,7 +29,10 @@ class CompanyController extends Controller
 
         return view('frontend.pages.company.show', [
             'company' => $company,
-            'random_company' => $random_company
+            'random_company' => $random_company,
+            '_title' => $company->name,
+            '_description' => $company->excerpt,
+            '_image' => $company->image_path
         ]);
     }
 }

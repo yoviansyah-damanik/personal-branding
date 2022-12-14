@@ -61,7 +61,7 @@ class ExperienceController extends Controller
             });
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Experience was successfully created.'));
+            Alert::success(__('Successfully!'), __('The experience was successfully created.'));
             return to_route('dashboard.experience.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -110,7 +110,7 @@ class ExperienceController extends Controller
             });
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Experience was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The experience was successfully updated.'));
             return to_route('dashboard.experience.show', $experience->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -128,7 +128,7 @@ class ExperienceController extends Controller
         try {
             $experience->delete();
 
-            Alert::success(__('Successfully!'), __('Experience was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The experience was successfully deleted.'));
             return to_route('dashboard.experience');
         } catch (Exception $e) {
             Alert::info(__('Something went wrong!'), $e->getMessage());

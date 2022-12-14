@@ -41,6 +41,7 @@ class HomepageController extends Controller
             'socials' => $socials,
             'experiences' => $experiences,
             'blogs' => $blogs,
+            '_title' => __('Home')
         ]);
     }
 }

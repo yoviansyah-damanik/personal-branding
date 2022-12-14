@@ -65,7 +65,7 @@ class Edit extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Tag was successfully updated.')
+                    'text' => __('The tag was successfully updated.')
                 ]
             );
         } catch (Exception $e) {

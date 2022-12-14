@@ -2440,14 +2440,14 @@ h6 .badge {
 .dropdown-menu {
     box-shadow: 0 10px 40px 0 rgba(51, 73, 94, 0.15);
     border: none;
-    width: 200px;
+    width: 280px;
 }
 
 .dropdown-menu.show {
     display: block !important;
 }
 
-.dropdown-menu a {
+.dropdown-menu :where(a, button) {
     font-size: 13px;
 }
 
@@ -2469,13 +2469,13 @@ h6 .badge {
     color: #6c757d;
 }
 
-a.dropdown-item {
+:where(a, button).dropdown-item {
     padding: 10px 20px;
     font-weight: 500;
     line-height: 1.2;
 }
 
-a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
+:where(a, button).dropdown-item:focus, :where(a, button).dropdown-item:active, :where(a, button).dropdown-item.active {
     background-color: #6777ef;
     color: #fff !important;
 }

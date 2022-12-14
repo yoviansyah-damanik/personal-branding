@@ -5,26 +5,22 @@
                 <div class="row row-margin align-items-center align-items-center">
                     <div class="col-lg-6">
                         <div class="contact__content col-margin" data-aos="fade-right">
-                            <h2>Let’s work together</h2>
-                            <h4>Get in touch with me</h4>
-                            <p>I’m interested in freelance opportunities – especially ambitious or large
-                                projects. However, if you have other request or question, don’t hesitate to use
-                                the form.</p>
+                            <h2>{{ __('Let’s work together') }}</h2>
+                            <h4>{{ __('Get in touch with me') }}</h4>
+                            <p>{{ __('You can contact me via the form provided or the contact provided. In addition, you can follow my social media accounts to find out about my daily activities.') }}
+                            </p>
                             <div class="social__wrapper">
-                                <h6>Follow Me</h6>
+                                <h6>{{ __('Follow Me') }}</h6>
                                 <div class="social">
-                                    <a href="#">
-                                        Fb
-                                    </a>
-                                    <a href="#">
-                                        Tw
-                                    </a>
-                                    <a href="#">
-                                        Ln
-                                    </a>
-                                    <a href="#">
-                                        In
-                                    </a>
+                                    @foreach ($_social_media as $item)
+                                        <a href="{{ $item->url }}">
+                                            <div class="icon"
+                                                style="background:{{ $item->social_media_icon->color }}">
+                                                <i class="{{ $item->social_media_icon->icon }}"></i>
+                                            </div>
+                                            {{ $item->name }}
+                                        </a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

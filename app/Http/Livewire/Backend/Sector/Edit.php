@@ -66,7 +66,7 @@ class Edit extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Sector was successfully updated.')
+                    'text' => __('The sector was successfully updated.')
                 ]
             );
         } catch (Exception $e) {

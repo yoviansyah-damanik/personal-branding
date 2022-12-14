@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id');
-            $table->string('title');
+            $table->string('title')->index();
             $table->string('slug');
             $table->text('description');
             $table->string('image');

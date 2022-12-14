@@ -66,7 +66,7 @@ class ProjectController extends Controller
             });
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Project was successfully created.'));
+            Alert::success(__('Successfully!'), __('The project was successfully created.'));
             return to_route('dashboard.project.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -126,7 +126,7 @@ class ProjectController extends Controller
 
             $project = $project->refresh();
             DB::commit();
-            Alert::success(__('Successfully!'), __('Project was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The project was successfully updated.'));
             return to_route('dashboard.project.show', $project->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -145,7 +145,7 @@ class ProjectController extends Controller
             GeneralHelper::delete_image($project->image);
             $project->delete();
 
-            Alert::success(__('Successfully!'), __('Project was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The project was successfully deleted.'));
             return to_route('dashboard.project');
         } catch (Exception $e) {
             Alert::info(__('Something went wrong!'), $e->getMessage());

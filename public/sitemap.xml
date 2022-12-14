@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>http://personal-branding.test</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.1</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Beranda | Roy Subarja</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>http://personal-branding.test/company</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.2</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Perusahaan | Roy Subarja</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>http://personal-branding.test/organization</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.3</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Organisasi | Roy Subarja</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>http://personal-branding.test/experience</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.4</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Pengalaman | Roy Subarja</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>http://personal-branding.test/social</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Sosial | Roy Subarja</image:caption>
+</image:image>
+</url>
+    <url>
+        <loc>http://personal-branding.test/blog</loc>
+        <lastmod>2022-12-15T00:21:33+07:00</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+    <image:loc>http://personal-branding.test/branding-images/ads.png</image:loc>
+    <image:caption>Blog | Roy Subarja</image:caption>
+</image:image>
+</url>
+</urlset>

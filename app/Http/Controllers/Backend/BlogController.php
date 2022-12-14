@@ -79,7 +79,7 @@ class BlogController extends Controller
             });
 
             DB::commit();
-            Alert::success(__('Successfully!'), __('Blog was successfully created.'));
+            Alert::success(__('Successfully!'), __('The blog was successfully created.'));
             return to_route('dashboard.blog.show', $slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -150,7 +150,7 @@ class BlogController extends Controller
 
             $blog = $blog->refresh();
             DB::commit();
-            Alert::success(__('Successfully!'), __('Blog was successfully updated.'));
+            Alert::success(__('Successfully!'), __('The blog was successfully updated.'));
             return to_route('dashboard.blog.show', $blog->slug);
         } catch (Exception $e) {
             DB::rollback();
@@ -169,7 +169,7 @@ class BlogController extends Controller
             GeneralHelper::delete_image($blog->image);
             $blog->delete();
 
-            Alert::success(__('Successfully!'), __('Blog was successfully deleted.'));
+            Alert::success(__('Successfully!'), __('The blog was successfully deleted.'));
             return to_route('dashboard.blog');
         } catch (Exception $e) {
             Alert::info(__('Something went wrong!'), $e->getMessage());

@@ -36,14 +36,10 @@
             </div>
             <div class="article-cta d-flex justify-content-between align-items-center">
                 <div class="d-block">
-                    <form action="{{ route('dashboard.social.delete', $social->slug) }}" method="post"class="d-inline">
-                        @csrf
-                        @method('delete')
-                        <button class="btn btn-sm btn-dark delete-social" data-toggle="tooltip"
-                            title="{{ __('Delete') }}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                    <button class="btn btn-sm btn-dark" wire:click='delete_item' data-toggle="tooltip"
+                        title="{{ __('Delete') }}">
+                        <i class="fas fa-trash"></i>
+                    </button>
                     <a class="btn btn-sm btn-warning" href="{{ route('dashboard.social.edit', $social->slug) }}"
                         data-toggle="tooltip" title="{{ __('Edit') }}">
                         <i class="fas fa-edit"></i>

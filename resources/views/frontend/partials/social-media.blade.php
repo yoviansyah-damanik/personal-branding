@@ -1,4 +1,7 @@
 <div class="section__social_media">
+    <div class="section__social_media_icon">
+        <img src="{{ asset('frontend-assets/images/call.png') }}" alt="Call Icon">
+    </div>
     <button id="social_media_toggle_button">
         <i class="fas fa-share-nodes"></i>
     </button>

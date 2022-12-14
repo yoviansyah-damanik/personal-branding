@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard.homepage') }}">{{ config('app.name') }}</a>
+            <a href="{{ route('dashboard.homepage') }}">{{ $_app_name }}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard.homepage') }}">{{ config('app.abb_name') }}</a>
+            <a href="{{ route('dashboard.homepage') }}">{{ $_app_abb_name }}</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">{{ __('Dashboard') }}</li>
@@ -73,7 +73,7 @@
             </li>
             {{-- SETTINGS HEADER --}}
             <li class="menu-header">{{ __('Settings') }}</li>
-            <li class="nav-item {{ Request::routeIs('dashboard.account') ? 'active' : '' }}">
+            <li class="nav-item {{ Request::routeIs('dashboard.account*') ? 'active' : '' }}">
                 <a href="{{ route('dashboard.account') }}" class="nav-link"><i
                         class="fas fa-user"></i><span>{{ __('Account') }}</span></a>
             </li>

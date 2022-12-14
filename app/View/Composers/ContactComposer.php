@@ -18,8 +18,8 @@ class ContactComposer
         $configs = Configuration::whereIn('attribute', ['phone_number', 'email'])
             ->get();
 
-        $phone_number = $configs->filter(fn ($item) => $item->attribute == 'phone_number');
-        $email = $configs->filter(fn ($item) => $item->attribute == 'email');
+        $phone_number = $configs->filter(fn ($item) => $item->attribute == 'phone_number')->first()->value;
+        $email = $configs->filter(fn ($item) => $item->attribute == 'email')->first()->value;
 
         $view->with('_phone_number', $phone_number);
         $view->with('_email', $email);

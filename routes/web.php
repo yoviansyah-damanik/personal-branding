@@ -29,6 +29,8 @@ Route::get('/login', [AuthenticationController::class, 'index'])
     ->name('login');
 Route::post('/login', [AuthenticationController::class, 'login'])
     ->name('login.do');
+Route::post('/logout', [AuthenticationController::class, 'logout'])
+    ->name('logout');
 
 Route::get('/blog', [BlogController::class, 'index'])
     ->name('blog');

@@ -20,6 +20,7 @@
 
     @include('frontend.partials.preloader')
 
+    @include('frontend.partials.content.footer')
     @include('frontend.partials.social-media')
     @include('frontend.partials.content.js')
 </body>

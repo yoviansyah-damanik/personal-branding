@@ -2,11 +2,6 @@
 
 @section('title', __('Tags'))
 
-@push('style')
-    <link rel="stylesheet"
-        href="{{ asset('backend-assets/library/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
-@endpush
-
 @section('main')
     <div class="main-content">
         <section class="section">
@@ -45,39 +40,3 @@
         </section>
     </div>
 @endsection
-
-@push('scripts')
-    <script src="{{ asset('backend-assets/library/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
-
-    <script type="text/javascript">
-        $('.delete-tag').on('click', (e) => {
-            e.preventDefault()
-
-            const swalWithBootstrapButtons = Swal.mixin({
-                customClass: {
-                    confirmButton: 'btn btn-success',
-                    cancelButton: 'btn btn-danger ml-2'
-                },
-                buttonsStyling: false
-            })
-
-            swalWithBootstrapButtons.fire({
-                title: `{{ __('Are you sure?') }}`,
-                text: `{{ __('You wont be able to revert this!') }}`,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonText: `{{ __('Yes, delete it!') }}`,
-                cancelButtonText: `{{ __('No, cancel!') }}`,
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    swalWithBootstrapButtons.fire(
-                        `{{ __('Wait!') }}`,
-                        `{{ __('The process is in progress.') }}`,
-                        'success'
-                    )
-                    e.target.closest('form').submit()
-                }
-            })
-        })
-    </script>
-@endpush

@@ -58,7 +58,7 @@
 }
 
 ::-webkit-scrollbar-button, ::-webkit-scrollbar-thumb {
-    background-color: #b1601a;
+    background-color: #FFBD1B;
     border-radius: 5px;
 }
 
@@ -79,7 +79,7 @@ html {
 
 body {
     font-family: "Noto Sans", sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     /* line-height: 0px; */
     font-weight: 400;
     color: #ffffff;
@@ -238,7 +238,7 @@ button {
 
 a:hover,
 button:hover {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 h1,
@@ -251,7 +251,7 @@ h1,
 
 h1 span,
 .hero-title span {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 h2,
@@ -394,7 +394,7 @@ img {
 }
 
 .iScrollIndicator {
-    background-color: #b1601a !important;
+    background-color: #FFBD1B !important;
 }
 
 .anim-wrapper {
@@ -419,7 +419,7 @@ img {
 }
 
 .anim-wrapper .line {
-    fill: #b1601a50 !important;
+    fill: #FFBD1B50 !important;
     opacity: 1 !important;
 }
 
@@ -428,7 +428,7 @@ img {
 }
 
 .anim-wrapper .light {
-    fill: #b1601a90 !important;
+    fill: #FFBD1B90 !important;
 }
 
 canvas {
@@ -470,8 +470,8 @@ canvas {
     -webkit-animation: spinner 1s infinite linear;
     animation: spinner 1s infinite linear;
     border-radius: 50%;
-    border: 3px solid #b1601a20;
-    border-top-color: #b1601a;
+    border: 3px solid #FFBD1B20;
+    border-top-color: #FFBD1B;
     height: 9em;
     margin: 0 auto 3.5em auto;
     width: 9em;
@@ -490,7 +490,7 @@ canvas {
 .ctn-preloader .animation-preloader .txt-loading .letters-loading:before {
     -webkit-animation: letters-loading 4s infinite;
     animation: letters-loading 4s infinite;
-    color: #b1601a;
+    color: #FFBD1B;
     content: attr(data-text-preloader);
     left: 0;
     opacity: 0;
@@ -501,7 +501,7 @@ canvas {
 }
 
 .ctn-preloader .animation-preloader .txt-loading .letters-loading {
-    color: #b1601a50;
+    color: #FFBD1B50;
     position: relative;
 }
 
@@ -691,7 +691,7 @@ header .nav__logo span {
     font-size: inherit;
     font-weight: inherit;
     line-height: inherit;
-    color: #b1601a;
+    color: #FFBD1B;
     margin: 0px;
 }
 
@@ -726,11 +726,11 @@ header .nav__items ul a {
 }
 
 header .nav__items ul a:hover {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 header .nav__items ul .active {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 header .close {
@@ -743,7 +743,7 @@ header .close {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     padding: 0px !important;
-    color: #b1601a;
+    color: #FFBD1B;
     background-color: transparent;
 }
 
@@ -787,7 +787,7 @@ header .nav__uncollapsed .social a {
 }
 
 header .nav__uncollapsed .social a:hover {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 header .nav__uncollapsed .nav__bar {
@@ -819,7 +819,7 @@ header .nav__uncollapsed .nav__bar .middle-bar {
 header .nav__uncollapsed .nav__bar-toggle .top-bar {
     -webkit-transform: rotate(-45deg) translate(-7px, 4px);
     transform: rotate(-45deg) translate(-7px, 4px);
-    background: #b1601a;
+    background: #FFBD1B;
 }
 
 header .nav__uncollapsed .nav__bar-toggle .middle-bar {
@@ -829,7 +829,7 @@ header .nav__uncollapsed .nav__bar-toggle .middle-bar {
 header .nav__uncollapsed .nav__bar-toggle .bottom-bar {
     -webkit-transform: rotate(45deg) translate(-7px, -4px);
     transform: rotate(45deg) translate(-7px, -4px);
-    background: #b1601a;
+    background: #FFBD1B;
 }
 
 header .social {
@@ -847,7 +847,7 @@ header .social a {
     font-size: 1em;
     letter-spacing: 2px;
     font-weight: 400;
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 header .social a:hover {
@@ -927,7 +927,7 @@ header .social a:hover {
 .hero .hero__popup {
     width: 60px;
     height: 60px;
-    background-color: #b1601a;
+    background-color: #FFBD1B;
     border-radius: 50%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -952,7 +952,7 @@ header .social a:hover {
     transform: translate(-50%, -50%);
     width: 80px;
     height: 80px;
-    background-color: #b1601a50;
+    background-color: #FFBD1B50;
     border-radius: 50%;
     z-index: -1;
     -webkit-animation: waves 8s infinite linear;
@@ -968,7 +968,7 @@ header .social a:hover {
     transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
-    background-color: #b1601a60;
+    background-color: #FFBD1B60;
     border-radius: 50%;
     z-index: -1;
     -webkit-animation: waves 3.6s infinite linear;
@@ -997,7 +997,7 @@ header .social a:hover {
     line-height: 1.2;
     font-weight: 700;
     text-transform: uppercase;
-    color: #b1601a;
+    color: #FFBD1B;
     letter-spacing: 3px;
     margin-bottom: 37px;
 }
@@ -1027,7 +1027,7 @@ header .social a:hover {
 
 .hero .hero__cta .cmn-button {
     padding: 15px 30px;
-    background-color: #b1601a;
+    background-color: #FFBD1B;
     border-radius: 5px;
     letter-spacing: 2px;
 }
@@ -1041,7 +1041,7 @@ header .social a:hover {
 }
 
 .hero .hero__cta .arrow-down.icon {
-    color: #b1601a;
+    color: #FFBD1B;
     position: relative;
     margin-left: 10px;
     margin-top: 2px;
@@ -1208,8 +1208,8 @@ header .social a:hover {
     position: absolute;
     top: 0px;
     left: 0px;
-    border-top: 2px solid #b1601a;
-    border-left: 2px solid #b1601a;
+    border-top: 2px solid #FFBD1B;
+    border-left: 2px solid #FFBD1B;
 }
 
 .about .about__thumb::after {
@@ -1220,8 +1220,8 @@ header .social a:hover {
     position: absolute;
     bottom: 0px;
     right: 0px;
-    border-bottom: 2px solid #b1601a;
-    border-right: 2px solid #b1601a;
+    border-bottom: 2px solid #FFBD1B;
+    border-right: 2px solid #FFBD1B;
 }
 
 .about .about__thumb .about__thumb-text {
@@ -1238,7 +1238,7 @@ header .social a:hover {
     transform: translate(-50%, -80%);
     width: 150px;
     height: 150px;
-    background-color: #b1601a;
+    background-color: #FFBD1B;
     border-radius: 50%;
     z-index: -1;
 }
@@ -1306,7 +1306,7 @@ header .social a:hover {
     left: 0px;
     width: 80%;
     height: 100%;
-    background-color: #b1601a;
+    background-color: #FFBD1B;
     border-radius: 5px;
 }
 
@@ -1339,7 +1339,7 @@ header .social a:hover {
 
 .companies .companies__content h5 {
     margin-bottom: 26px;
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 .companies .companies__content h2 {
@@ -1427,7 +1427,7 @@ header .social a:hover {
     -webkit-transform: translateY(-55%);
     transform: translateY(-55%);
     border-radius: 50%;
-    background-color: #b1601a50;
+    background-color: #FFBD1B50;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     z-index: -1;
@@ -1468,7 +1468,7 @@ header .social a:hover {
     -webkit-transform: translateY(-55%);
     transform: translateY(-55%);
     border-radius: 50%;
-    background-color: #b1601a50;
+    background-color: #FFBD1B50;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     z-index: -1;
@@ -1499,7 +1499,7 @@ header .social a:hover {
 }
 
 .companies .companies__slider-nav button:hover i::after {
-    background-color: #b1601a;
+    background-color: #FFBD1B;
 }
 
 /* ====
@@ -1567,8 +1567,8 @@ header .social a:hover {
 
 .experiences .experience__content-tab-btns .tab-btn-active {
     background-color: #2e2a2a;
-    color: #b1601a;
-    border-left: 1px solid #b1601a;
+    color: #FFBD1B;
+    border-left: 1px solid #FFBD1B;
 }
 
 .experiences .experience__content-tab-content h5 {
@@ -1576,7 +1576,7 @@ header .social a:hover {
 }
 
 .experiences .experience__content-tab-content h5 span {
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 .experiences .experience__content-tab-content p {
@@ -1607,7 +1607,7 @@ header .social a:hover {
 }
 
 .experiences .experience__content-tab-content li i {
-    color: #b1601a;
+    color: #FFBD1B;
     font-size: 22px;
 }
 
@@ -1675,7 +1675,7 @@ header .social a:hover {
 .contact .contact__form button {
     padding: 12px 30px;
     background-color: transparent;
-    border: 1px solid #b1601a;
+    border: 1px solid #FFBD1B;
     border-radius: 30px;
     font-weight: 300;
     letter-spacing: 2px;
@@ -1695,14 +1695,32 @@ header .social a:hover {
     display: flex;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
-    gap: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .contact .social__wrapper .social a {
     font-size: 1em;
-    font-weight: 400;
     letter-spacing: 1px;
+}
+
+.contact .social__wrapper .social a .icon {
+    color: #fff;
+    width: 25px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
+
+.contact .social__wrapper .social a:hover .icon {
+    color: #fff;
 }
 
 .contact .price-range {
@@ -1755,7 +1773,7 @@ header .social a:hover {
 
 .contact .price-range .focus {
     background-color: #1e1e22 !important;
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 .contact .price-range .current {
@@ -1777,7 +1795,7 @@ header .social a:hover {
 
 .contact .price-range .option:hover {
     background-color: #2e2a2a;
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 .contact .open {
@@ -1817,7 +1835,7 @@ header .social a:hover {
 
 .blogs .blogs__content h5 {
     margin-bottom: 26px;
-    color: #b1601a;
+    color: #FFBD1B;
 }
 
 .blogs .blogs__content h2 {
@@ -1905,7 +1923,7 @@ header .social a:hover {
     -webkit-transform: translateY(-55%);
     transform: translateY(-55%);
     border-radius: 50%;
-    background-color: #b1601a50;
+    background-color: #FFBD1B50;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     z-index: -1;
@@ -1946,7 +1964,7 @@ header .social a:hover {
     -webkit-transform: translateY(-55%);
     transform: translateY(-55%);
     border-radius: 50%;
-    background-color: #b1601a50;
+    background-color: #FFBD1B50;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
     z-index: -1;
@@ -1977,7 +1995,7 @@ header .social a:hover {
 }
 
 .blogs .blogs__slider-nav button:hover i::after {
-    background-color: #b1601a;
+    background-color: #FFBD1B;
 }
 
 /* ====
@@ -1999,6 +2017,7 @@ header .social a:hover {
         bottom: 0px;
         height: 100vh;
         overflow-y: auto;
+        overflow-x: hidden;
         width: 300px;
         max-width: 300px;
         background-color: #161616;

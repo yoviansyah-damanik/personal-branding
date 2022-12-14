@@ -65,7 +65,7 @@ class Create extends Component
                 'success',
                 __('Successfully!'),
                 [
-                    'text' => __('Sector was successfully created.')
+                    'text' => __('The sector was successfully created.')
                 ]
             );
         } catch (Exception $e) {

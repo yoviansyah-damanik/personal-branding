@@ -41,12 +41,17 @@ class ConfigurationSeeder extends Seeder
         ]);
 
         Configuration::create([
+            'attribute' => 'app_description',
+            'value' => 'Personal Branding'
+        ]);
+
+        Configuration::create([
             'attribute' => 'is_maintenance',
             'value' => false
         ]);
 
         Configuration::create([
-            'attribute' => 'person',
+            'attribute' => 'owner',
             'value' => 'Roy Efendi Subarja'
         ]);
 
@@ -61,11 +66,6 @@ class ConfigurationSeeder extends Seeder
         ]);
 
         Configuration::create([
-            'attribute' => 'about_me',
-            'value' => 'Padang Sidempuan'
-        ]);
-
-        Configuration::create([
             'attribute' => 'email',
             'value' => 'example@gmail.com'
         ]);
@@ -73,6 +73,20 @@ class ConfigurationSeeder extends Seeder
         Configuration::create([
             'attribute' => 'googlemaps',
             'value' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d274.61410761163285!2d99.26085863021798!3d1.3965556261432874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302c1de8512034b5%3A0x31855af7c3d589b8!2sKopi%20Adope!5e0!3m2!1sid!2sid!4v1670441043003!5m2!1sid!2sid'
+        ]);
+
+        Configuration::create([
+            'attribute' => 'sitemap_frequency',
+            'value' => 'always'
+        ]);
+
+        Configuration::create([
+            'attribute' => 'sitemap_priority',
+            'value' => 0
+        ]);
+        Configuration::create([
+            'attribute' => 'keywords',
+            'value' => null
         ]);
     }
 }

@@ -7,12 +7,14 @@ use Throwable;
 use Carbon\Carbon;
 use App\Models\Blog;
 use Livewire\Component;
+use App\Helpers\GeneralHelper;
 use Illuminate\Support\Facades\DB;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class Item extends Component
 {
     use LivewireAlert;
+    protected $listeners = ['do_delete_item'];
 
     public function mount($blog)
     {
@@ -82,6 +84,54 @@ class Item extends Component
             DB::rollback();
             $this->alert(
                 'danger',
+                __('Something went wrong!'),
+                ['text' => $e->getMessage()]
+            );
+        }
+    }
+
+    public function delete_item()
+    {
+        $this->alert(
+            'warning',
+            __('Confirmation!'),
+            [
+                'text' => __('Are you sure you want to delete the blog?'),
+                'timer' => 0,
+                'toast' => false,
+                'position' => 'center',
+                'showConfirmButton' => true,
+                'confirmButtonText' => __('Delete'),
+                'showCancelButton' => true,
+                'cancelButtonText' => __('Cancel'),
+                'onConfirmed' => "do_delete_item",
+                'allowOutsideClick' => false,
+            ]
+        );
+    }
+
+    public function do_delete_item()
+    {
+        try {
+            Blog::whereId($this->blog->id)
+                ->delete();
+            GeneralHelper::delete_image($this->blog->image);
+
+            $this->emitUp('refresh_blog_data');
+            $this->alert(
+                'success',
+                __('Successfully!'),
+                ['text' => __('The blog was successfully deleted.')]
+            );
+        } catch (Exception $e) {
+            $this->alert(
+                'warning',
+                __('Something went wrong!'),
+                ['text' => $e->getMessage()]
+            );
+        } catch (Throwable $e) {
+            $this->alert(
+                'warning',
                 __('Something went wrong!'),
                 ['text' => $e->getMessage()]
             );

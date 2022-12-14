@@ -30,8 +30,7 @@
                                                     @endforeach
                                                 </div>
                                                 <div class="company__content-demo">
-                                                    <a href="{{ route('company.show', $company->slug) }}"
-                                                        target="_blank">
+                                                    <a href="{{ route('company.show', $company->slug) }}">
                                                         <i class="fa-solid fa-eye"></i>
                                                     </a>
                                                     @if ($company->url)

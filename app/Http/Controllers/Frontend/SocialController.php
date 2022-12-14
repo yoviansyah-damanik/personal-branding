@@ -15,7 +15,9 @@ class SocialController extends Controller
             ->get();
 
         return view('frontend.pages.social.index', [
-            'socials' => $socials
+            'socials' => $socials,
+            '_title' => __('Socials'),
+            '_description' => __('Social activities that I routinely do without strings attached. Caring can grow for many reasons. Sensitivity of feelings will make us think about the actions we will take. Will we just sympathize or will we empathize to provide action.'),
         ]);
     }
 
@@ -29,7 +31,10 @@ class SocialController extends Controller
 
         return view('frontend.pages.social.show', [
             'random_social' => $random_social,
-            'social' => $social
+            'social' => $social,
+            '_title' => $social->name,
+            '_description' => $social->excerpt,
+            '_image' => $social->image_path
         ]);
     }
 }

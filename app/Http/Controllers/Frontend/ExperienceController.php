@@ -14,7 +14,8 @@ class ExperienceController extends Controller
             ->get();
 
         return view('frontend.pages.experience.index', [
-            'experiences' => $experiences
+            'experiences' => $experiences,
+            '_title' => __('Experiences')
         ]);
     }
 }

@@ -42,15 +42,10 @@
             </div>
             <div class="article-cta d-flex justify-content-between align-items-center">
                 <div class="d-block">
-                    <form action="{{ route('dashboard.experience.delete', $experience->slug) }}"
-                        method="post"class="d-inline">
-                        @csrf
-                        @method('delete')
-                        <button class="btn btn-sm btn-dark delete-experience" data-toggle="tooltip"
-                            title="{{ __('Delete') }}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    </form>
+                    <button class="btn btn-sm btn-dark" wire:click='delete_item' data-toggle="tooltip"
+                        title="{{ __('Delete') }}">
+                        <i class="fas fa-trash"></i>
+                    </button>
                     <a class="btn btn-sm btn-warning"
                         href="{{ route('dashboard.experience.edit', $experience->slug) }}" data-toggle="tooltip"
                         title="{{ __('Edit') }}">

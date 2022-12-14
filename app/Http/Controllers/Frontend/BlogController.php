@@ -16,7 +16,9 @@ class BlogController extends Controller
             ->withQueryString();
 
         return view('frontend.pages.blog.index', [
-            'blogs' => $blogs
+            'blogs' => $blogs,
+            '_title' => __('Blogs'),
+            '_description' => __('You can find various interesting blogs about me here.'),
         ]);
     }
 
@@ -32,7 +34,10 @@ class BlogController extends Controller
 
         return view('frontend.pages.blog.show', [
             'blog' => $blog,
-            'random_blog' => $random_blog
+            'random_blog' => $random_blog,
+            '_title' => $blog->title,
+            '_description' => $blog->excerpt,
+            '_image' => $blog->image_path
         ]);
     }
 }

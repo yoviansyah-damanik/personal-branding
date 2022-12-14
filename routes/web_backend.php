@@ -59,8 +59,6 @@ Route::group(
             ->group(function () {
                 Route::get('/category', 'index')
                     ->name('category');
-                Route::delete('/category/{category:id}', 'delete')
-                    ->name('category.delete');
             });
 
         // PROJECT
@@ -90,8 +88,6 @@ Route::group(
             ->group(function () {
                 Route::get('/sector', 'index')
                     ->name('sector');
-                Route::delete('/sector/{sector:id}', 'delete')
-                    ->name('sector.delete');
             });
 
         // COMPANY
@@ -192,6 +188,10 @@ Route::group(
             ->group(function () {
                 Route::get('/account', 'index')
                     ->name('account');
+                Route::get('/account/information', 'information')
+                    ->name('account.information');
+                Route::get('/account/password', 'password')
+                    ->name('account.password');
             });
 
         // GENERAL
@@ -201,10 +201,16 @@ Route::group(
                     ->name('general');
                 Route::get('/general/social_media', 'social_media')
                     ->name('general.social_media');
-                Route::get('/general/site', 'site')
-                    ->name('general.site');
                 Route::get('/general/seo', 'seo')
                     ->name('general.seo');
+                Route::get('/general/site', 'site')
+                    ->name('general.site');
+                Route::put('/general/site/images', 'update_images')
+                    ->name('general.site.images');
+                Route::put('/general/site/information', 'update_information')
+                    ->name('general.site.information');
+                Route::put('/general/site/owner', 'update_owner')
+                    ->name('general.site.owner');
             });
     }
 );
