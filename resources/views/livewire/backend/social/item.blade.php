@@ -36,7 +36,7 @@
             </div>
             <div class="article-cta d-flex justify-content-between align-items-center">
                 <div class="d-block">
-                    <button class="btn btn-sm btn-dark" wire:click='delete_item' data-toggle="tooltip"
+                    <button class="btn btn-sm btn-danger" wire:click='delete_item' data-toggle="tooltip"
                         title="{{ __('Delete') }}">
                         <i class="fas fa-trash"></i>
                     </button>
@@ -56,9 +56,9 @@
                         </button>
                     @endif
                 </div>
-                <a class="btn btn-sm btn-info"
-                    href="{{ route('dashboard.social.show', $social->slug) }}">{{ __('Read More') }}
-                    <i class="fas fa-chevron-right"></i></a>
+                <a data-toggle="tooltip" title="{{ __('Read More') }}" class="btn btn-sm btn-info"
+                    href="{{ route('dashboard.social.show', $social->slug) }}">
+                    <i class="fas fa-eye"></i></a>
             </div>
         </div>
     </article>

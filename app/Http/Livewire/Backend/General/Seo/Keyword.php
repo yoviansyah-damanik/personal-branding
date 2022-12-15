@@ -22,6 +22,7 @@ class Keyword extends Component
 
         $keywords = $value ? Str::of($value)->explode(',') : [];
 
+        $this->dispatchBrowserEvent('tooltipReset');
         return view('livewire.backend.general.seo.keyword', [
             'keywords' => $keywords
         ]);

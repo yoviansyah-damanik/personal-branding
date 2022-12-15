@@ -85,6 +85,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
+                        {{-- APPLICATION INFORMATION --}}
                         <div class="card">
                             <div class="card-header">
                                 <h4>{{ __('Application Information') }}</h4>
@@ -129,17 +130,6 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="col-12">
-                                            <div class="form-group">
-                                                <label for="about_me">{{ __('About Me') }}</label>
-                                                <textarea name="about_me" class="summernote" data-height="150" height=150 required>{{ $_about_me }}</textarea>
-                                                @error('app_description')
-                                                    <div class="text-danger small">
-                                                        {{ $message }}
-                                                    </div>
-                                                @enderror
-                                            </div>
-                                        </div>
                                         {{-- <div class="col-12">
                                             <div class="form-group">
                                                 <div class="control-label">{{ __('Maintenance') }}</div>
@@ -156,6 +146,107 @@
                                             <button class="btn btn-primary">
                                                 <i class="fas fa-save"></i>
                                                 {{ __('Update Application Information') }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        {{-- OWNER --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>{{ __('Owner Information') }}</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('dashboard.general.site.owner') }}" method="post">
+                                    @csrf
+                                    @method('put')
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="owner">{{ __('Owner') }}</label>
+                                                <input type="text" name="owner" value="{{ $_owner }}"
+                                                    class="form-control" required>
+                                                @error('owner')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="phone_number">{{ __('Phone Number') }}</label>
+                                                <input type="text" name="phone_number" value="{{ $_phone_number }}"
+                                                    class="form-control" required>
+                                                @error('phone_number')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="email">{{ __('Email') }}</label>
+                                                <input type="text" name="email" value="{{ $_email }}"
+                                                    class="form-control" required>
+                                                @error('email')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label for="address">{{ __('Address') }}</label>
+                                                <input type="text" name="address" value="{{ $_address }}"
+                                                    class="form-control" required>
+                                                @error('address')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary">
+                                                <i class="fas fa-save"></i>
+                                                {{ __('Update Owner') }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        {{-- BIOGRAPHY --}}
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>{{ __('Biography') }}</h4>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{ route('dashboard.general.site.biography') }}" method="post">
+                                    @csrf
+                                    @method('put')
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="about_me">{{ __('About Me') }}</label>
+                                                <textarea name="about_me" class="summernote" data-height="150" height=150 required>{{ $_about_me }}</textarea>
+                                                @error('app_description')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary">
+                                                <i class="fas fa-save"></i>
+                                                {{ __('Update Biography') }}
                                             </button>
                                         </div>
                                     </div>

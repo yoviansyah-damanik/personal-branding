@@ -110,4 +110,79 @@ class GeneralController extends Controller
             return back();
         }
     }
+
+    public function update_biography(Request $request)
+    {
+        try {
+            if ($request->owner)
+                Configuration::where('attribute', 'owner')
+                    ->update(['value' => $request->owner]);
+
+            if ($request->phone_number)
+                Configuration::where('attribute', 'phone_number')
+                    ->update(['value' => $request->phone_number]);
+
+            if ($request->email)
+                Configuration::where('attribute', 'email')
+                    ->update(['value' => $request->email]);
+
+            if ($request->address)
+                Configuration::where('attribute', 'address')
+                    ->update(['value' => $request->address]);
+
+            Alert::success(
+                __('Successfully!'),
+                __('The biography was successfully updated.')
+            );
+            return back();
+        } catch (Exception $e) {
+            Alert::warning(
+                __('Something went wrong!'),
+                $e->getMessage()
+            );
+            return back();
+        } catch (Throwable $e) {
+            Alert::warning(
+                __('Something went wrong!'),
+                $e->getMessage()
+            );
+            return back();
+        }
+    }
+
+    public function update_owner(Request $request)
+    {
+        try {
+            if ($request->owner)
+                Configuration::where('attribute', 'owner')
+                    ->update(['value' => $request->owner]);
+            if ($request->phone_number)
+                Configuration::where('attribute', 'phone_number')
+                    ->update(['value' => $request->phone_number]);
+            if ($request->email)
+                Configuration::where('attribute', 'email')
+                    ->update(['value' => $request->email]);
+            if ($request->address)
+                Configuration::where('attribute', 'address')
+                    ->update(['value' => $request->address]);
+
+            Alert::success(
+                __('Successfully!'),
+                __('The biography was successfully updated.')
+            );
+            return back();
+        } catch (Exception $e) {
+            Alert::warning(
+                __('Something went wrong!'),
+                $e->getMessage()
+            );
+            return back();
+        } catch (Throwable $e) {
+            Alert::warning(
+                __('Something went wrong!'),
+                $e->getMessage()
+            );
+            return back();
+        }
+    }
 }

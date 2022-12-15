@@ -22,6 +22,7 @@ class Item extends Component
 
     public function render()
     {
+        $this->dispatchBrowserEvent('tooltipReset');
         return view('livewire.backend.experience.item');
     }
 

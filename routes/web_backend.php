@@ -211,6 +211,10 @@ Route::group(
                     ->name('general.site.information');
                 Route::put('/general/site/owner', 'update_owner')
                     ->name('general.site.owner');
+                Route::put('/general/site/biography', 'update_biography')
+                    ->name('general.site.biography');
+                Route::put('/general/site/owner', 'update_owner')
+                    ->name('general.site.owner');
             });
     }
 );
