@@ -44,6 +44,8 @@
             .slick({
                 infinite: true,
                 autoplay: true,
+                pauseOnHover: false,
+                pauseOnFocus: false,
                 speed: 100,
                 slidesToShow: 1,
                 arrows: false,
