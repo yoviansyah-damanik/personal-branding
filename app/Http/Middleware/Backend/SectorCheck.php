@@ -20,7 +20,7 @@ class SectorCheck
     {
         $sector_count = Sector::count();
         if (!$sector_count) {
-            Alert::warning('Attention!', 'Please add a sector first.');
+            Alert::warning(__('Attention!'), __('Please add a sector first.'));
             return to_route('dashboard.sector');
         }
         return $next($request);

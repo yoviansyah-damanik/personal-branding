@@ -20,7 +20,7 @@ class CompanyCheck
     {
         $company_count = Company::count();
         if (!$company_count) {
-            Alert::warning('Attention!', 'Please add a company first.');
+            Alert::warning(__('Attention!'), __('Please add a company first.'));
             return to_route('dashboard.company');
         }
         return $next($request);

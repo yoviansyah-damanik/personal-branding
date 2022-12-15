@@ -20,7 +20,7 @@ class CategoryCheck
     {
         $category_count = Category::count();
         if (!$category_count) {
-            Alert::warning('Attention!', 'Please add a category first.');
+            Alert::warning(__('Attention!'), __('Please add a category first.'));
             return to_route('dashboard.category');
         }
         return $next($request);
