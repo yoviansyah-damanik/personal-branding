@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class JobController extends Controller
+class PartnerController extends Controller
 {
     public function index()
     {
-        return view('backend.pages.job.index');
+        return view('backend.pages.partner.index');
     }
 }

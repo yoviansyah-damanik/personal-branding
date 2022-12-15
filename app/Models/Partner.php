@@ -2,15 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
-use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Company extends Model
+class Partner extends Model
 {
-    use HasFactory, Sluggable;
+    use HasFactory;
     protected $guarded = ['id'];
 
     public function sluggable(): array
@@ -33,14 +31,6 @@ class Company extends Model
             get: fn () => asset('storage/' . $this->image)
         );
     }
-
-    protected function excerpt(): Attribute
-    {
-        return new Attribute(
-            get: fn () => Str::limit(strip_tags($this->description), 200)
-        );
-    }
-
     public function scopeDrafted($query)
     {
         return $query->where('status', 0);
@@ -49,16 +39,5 @@ class Company extends Model
     public function scopePublished($query)
     {
         return $query->where('status', 1);
-    }
-
-    public function projects()
-    {
-        return $this->hasMany(Project::class)
-            ->published();
-    }
-
-    public function sectors()
-    {
-        return $this->hasManyThrough(Sector::class, SectorDetail::class, 'company_id', 'id', 'id', 'sector_id');
     }
 }

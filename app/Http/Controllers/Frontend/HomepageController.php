@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Blog;
 use App\Models\Social;
 use App\Models\Company;
+use App\Models\Partner;
 use App\Models\Experience;
 use App\Models\Organization;
 use Illuminate\Http\Request;
@@ -35,12 +36,15 @@ class HomepageController extends Controller
         $experiences = Experience::published()
             ->get();
 
+        $partners = Partner::get();
+
         return view('frontend.index', [
             'companies' => $companies,
             'organizations' => $organizations,
             'socials' => $socials,
             'experiences' => $experiences,
             'blogs' => $blogs,
+            'partners' => $partners,
             '_title' => __('Home')
         ]);
     }

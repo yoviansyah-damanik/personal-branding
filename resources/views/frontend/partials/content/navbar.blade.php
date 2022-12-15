@@ -9,7 +9,7 @@
                             class="nav__item {{ Request::routeIs('homepage*') ? 'active' : '' }}">{{ __('Home') }}</a>
                     </li>
                     <li><a href="{{ route('about') }}"
-                            class="nav__item {{ Request::routeIs('about*') ? 'active' : '' }}">{{ __('About') }}</a>
+                            class="nav__item {{ Request::routeIs('about*') ? 'active' : '' }}">{{ __('Biography') }}</a>
                     </li>
                     <li><a href="{{ route('company') }}"
                             class="nav__item {{ Request::routeIs('company*') ? 'active' : '' }}">{{ __('Companies') }}</a>

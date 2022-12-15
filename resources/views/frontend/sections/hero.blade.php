@@ -19,7 +19,16 @@
                                 <a href="#contact" data-menuanchor="contact">{{ __('Contact Me') }}<div
                                         class="arrow-down icon animated-icon"></div></a>
                             </div>
-                            {{-- TAMBAH LOGO BISNIS --}}
+
+                            @if ($partners->count() > 0)
+                                <div class="partners__slider">
+                                    @foreach ($partners as $partner)
+                                        <div class="partners__slider_item">
+                                            <img src="{{ $partner->image_path }}" alt="{{ $partner->name }} Image">
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -27,3 +36,22 @@
         </div>
     </div>
 </section>
+
+@push('scripts')
+    <script type="text/javascript">
+        $(".partners__slider")
+            .not('.slick-initialized')
+            .slick({
+                infinite: true,
+                autoplay: true,
+                speed: 100,
+                slidesToShow: 1,
+                arrows: false,
+                dots: false,
+                variableWidth: true,
+                centerMode: true
+                // prevArrow: $(".prev-partner-item"),
+                // nextArrow: $(".next-partner-item"),
+            });
+    </script>
+@endpush

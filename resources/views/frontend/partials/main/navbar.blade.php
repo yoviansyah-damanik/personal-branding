@@ -6,7 +6,7 @@
                 <button class="close"><i class="fa-solid fa-xmark"></i></button>
                 <ul>
                     <li><a href="#home" data-menuanchor="home" class="nav__item">{{ __('Home') }}</a></li>
-                    <li><a href="#about" data-menuanchor="about" class="nav__item">{{ __('About') }}</a></li>
+                    <li><a href="#about" data-menuanchor="about" class="nav__item">{{ __('Biography') }}</a></li>
                     <li><a href="#company" data-menuanchor="company" class="nav__item">{{ __('Companies') }}</a>
                     </li>
                     <li><a href="#experience" data-menuanchor="experience" class="nav__item">{{ __('Experiences') }}</a>

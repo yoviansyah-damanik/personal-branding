@@ -84,9 +84,12 @@ class GeneralController extends Controller
             if ($request->app_description)
                 Configuration::where('attribute', 'app_description')
                     ->update(['value' => $request->app_description]);
+            if ($request->about_me)
+                Configuration::where('attribute', 'about_me')
+                    ->update(['value' => $request->about_me]);
 
-            Configuration::where('attribute', 'is_maintenance')
-                ->update(['value' => $request->has('maintenance')]);
+            // Configuration::where('attribute', 'is_maintenance')
+            //     ->update(['value' => $request->has('maintenance')]);
 
             Alert::success(
                 __('Successfully!'),

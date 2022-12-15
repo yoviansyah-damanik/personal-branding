@@ -3,7 +3,7 @@
 @section('title', __('Site'))
 
 @push('style')
-    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="{{ asset('backend-assets/library/summernote/dist/summernote-bs4.css') }}">
 @endpush
 
 @section('main')
@@ -131,6 +131,17 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-group">
+                                                <label for="about_me">{{ __('About Me') }}</label>
+                                                <textarea name="about_me" class="summernote" data-height="150" height=150 required>{{ $_about_me }}</textarea>
+                                                @error('app_description')
+                                                    <div class="text-danger small">
+                                                        {{ $message }}
+                                                    </div>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        {{-- <div class="col-12">
+                                            <div class="form-group">
                                                 <div class="control-label">{{ __('Maintenance') }}</div>
                                                 <label class="custom-switch mt-2 pl-0">
                                                     <input type="checkbox" name="maintenance" class="custom-switch-input"
@@ -140,7 +151,7 @@
                                                         {{ __('The site will enter maintenance mode.') }}</span>
                                                 </label>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="col-12">
                                             <button class="btn btn-primary">
                                                 <i class="fas fa-save"></i>
@@ -159,6 +170,7 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('backend-assets/library/summernote/dist/summernote-bs4.js') }}"></script>
     <script src="{{ asset('backend-assets/library/upload-preview/upload-preview.js') }}"></script>
     <script type="text/javascript">
         $.uploadPreview({

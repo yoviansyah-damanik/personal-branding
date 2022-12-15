@@ -65,6 +65,10 @@
                 <a href="{{ route('dashboard.social') }}" class="nav-link">
                     <i class="fas fa-people-carry-box"></i><span>{{ __('Socials') }}</span></a>
             </li>
+            <li class="nav-item {{ Request::routeIs('dashboard.partner*') ? 'active' : '' }}">
+                <a href="{{ route('dashboard.partner') }}" class="nav-link">
+                    <i class="fas fa-handshake"></i><span>{{ __('Partners') }}</span></a>
+            </li>
             {{-- CONTACT HEADER --}}
             <li class="menu-header">{{ __('Responses') }}</li>
             <li class="nav-item {{ Request::routeIs('dashboard.contact*') ? 'active' : '' }}">

@@ -120,7 +120,7 @@
 
                                         <div class="row justify-content-center">
                                             @forelse ($random_company as $company)
-                                                <div class="col-lg-4 col-md-6">
+                                                <div class="col-md-4 col-sm-6">
                                                     <div class="blog__card">
                                                         <div class="blog__image">
                                                             <img src="{{ $company->image_path }}"
@@ -167,10 +167,38 @@
 
 @push('scripts')
     <script type="text/javascript">
+        $(".projects__slider")
+            .not(".slick-initialized")
+            .slick({
+                infinite: true,
+                autoplay: true,
+                focusOnSelect: false,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
+                        }
+                    },
+                ],
+                arrows: false,
+                dots: false,
+                // prevArrow: $(".prev-project-item"),
+                // nextArrow: $(".next-project-item"),
+                centerMode: false,
+                centerPadding: "0px",
+            });
+
         (function() {
             "use strict";
 
-            // projects
             var lava0;
             var ge1doot = {
                 screen: {
@@ -458,34 +486,5 @@
             );
             run();
         })();
-
-        $(".projects__slider")
-            .not(".slick-initialized")
-            .slick({
-                infinite: true,
-                autoplay: true,
-                focusOnSelect: true,
-                slidesToShow: 4,
-                slidesToScroll: 1,
-                responsive: [{
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 3,
-                        }
-                    },
-                    {
-                        breakpoint: 767,
-                        settings: {
-                            slidesToShow: 2,
-                        }
-                    },
-                ],
-                arrows: false,
-                dots: false,
-                // prevArrow: $(".prev-project-item"),
-                // nextArrow: $(".next-project-item"),
-                centerMode: false,
-                centerPadding: "0px",
-            });
     </script>
 @endpush

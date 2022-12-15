@@ -46,4 +46,14 @@ class Project extends Model
     {
         return $this->belongsTo(Company::class);
     }
+
+    public function scopeDrafted($query)
+    {
+        return $query->where('status', 0);
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->where('status', 1);
+    }
 }

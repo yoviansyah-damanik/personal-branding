@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\AccountController;
 use App\Http\Controllers\Backend\CompanyController;
 use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\Backend\GeneralController;
+use App\Http\Controllers\Backend\PartnerController;
 use App\Http\Controllers\Backend\ProjectController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\HomepageController;
@@ -174,14 +175,13 @@ Route::group(
                 Route::get('/contact/{contact:ticket_number}', 'show')
                     ->name('contact.show');
             });
-        // JOB
-        // Route::middleware('experience_check')
-        //     ->controller(JobController::class)
-        // Route::controller(JobController::class)
-        //     ->group(function () {
-        //         Route::get('/job', 'index')
-        //             ->name('job');
-        //     });
+
+        // PARTNER
+        Route::controller(PartnerController::class)
+            ->group(function () {
+                Route::get('/partner', 'index')
+                    ->name('partner');
+            });
 
         // ACCOUNT
         Route::controller(AccountController::class)

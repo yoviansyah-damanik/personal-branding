@@ -89,8 +89,8 @@
         if ($(".typed").length) {
             $(".typed").typed({
                 strings: ["Engineer", "Entrepreneur", "Motivator", "Activist", "Consultant"],
-                typeSpeed: 300,
-                backDelay: 900,
+                typeSpeed: 100,
+                backDelay: 450,
                 loop: true,
                 cursorChar: "|",
                 contentType: "html",
@@ -144,7 +144,7 @@
             .slick({
                 infinite: true,
                 autoplay: false,
-                focusOnSelect: true,
+                focusOnSelect: false,
                 slidesToShow: 5,
                 slidesToScroll: 1,
                 responsive: [

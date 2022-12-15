@@ -55,7 +55,7 @@
 
                                         <div class="row justify-content-center">
                                             @forelse ($random_organization as $organization)
-                                                <div class="col-lg-3 col-md-4 col-6">
+                                                <div class="col-md-3 col-sm-4 col-6">
                                                     <div class="organization__slider-single gap-1">
                                                         <div class="organization__thumb">
                                                             <img src="{{ $organization->image_path }}"

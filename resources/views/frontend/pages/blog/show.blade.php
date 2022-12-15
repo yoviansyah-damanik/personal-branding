@@ -65,7 +65,7 @@
 
                                         <div class="row">
                                             @forelse ($random_blog as $blog)
-                                                <div class="col-lg-4 col-md-6">
+                                                <div class="col-md-4 col-sm-6">
                                                     <div class="blog__card">
                                                         <div class="blog__image">
                                                             <img src="{{ $blog->image_path }}"

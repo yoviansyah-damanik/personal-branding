@@ -44,7 +44,7 @@
             <ul>
                 @foreach ($_other_organization as $item)
                     <li>
-                        <a href="{{ route('company.show', $item->slug) }}">
+                        <a href="{{ route('organization.show', $item->slug) }}">
                             <div class="image">
                                 <img src="{{ $item->image_path }}" alt="{{ $item->name }} Image">
                             </div>
@@ -77,7 +77,7 @@
             <ul>
                 @foreach ($_other_social as $item)
                     <li>
-                        <a href="{{ route('company.show', $item->slug) }}">
+                        <a href="{{ route('social.show', $item->slug) }}">
                             <div class="image">
                                 <img src="{{ $item->image_path }}" alt="{{ $item->name }} Image">
                             </div>
@@ -110,7 +110,7 @@
             <ul>
                 @foreach ($_other_blog as $item)
                     <li>
-                        <a href="{{ route('company.show', $item->slug) }}">
+                        <a href="{{ route('blog.show', $item->slug) }}">
                             <div class="image">
                                 <img src="{{ $item->image_path }}" alt="{{ $item->title }} Image">
                             </div>

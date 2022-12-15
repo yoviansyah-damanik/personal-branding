@@ -88,5 +88,9 @@ class ConfigurationSeeder extends Seeder
             'attribute' => 'keywords',
             'value' => null
         ]);
+        Configuration::create([
+            'attribute' => 'about_me',
+            'value' => null
+        ]);
     }
 }
