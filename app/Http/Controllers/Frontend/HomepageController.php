@@ -34,6 +34,8 @@ class HomepageController extends Controller
             ->get();
 
         $experiences = Experience::published()
+            ->orderBy('start_period', 'asc')
+            ->orderBy('name', 'asc')
             ->get();
 
         $partners = Partner::get();

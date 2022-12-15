@@ -11,6 +11,8 @@ class ExperienceController extends Controller
     public function index()
     {
         $experiences = Experience::published()
+            ->orderBy('start_period', 'asc')
+            ->orderBy('name', 'asc')
             ->get();
 
         return view('frontend.pages.experience.index', [

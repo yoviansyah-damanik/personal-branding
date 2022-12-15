@@ -903,7 +903,8 @@ header .social a:hover {
 .hero .section__inner .section__inner-content {
     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto 90%;
+    /* background-size: contain; */
     background-position: right 5% top 100%;
     position: relative;
 }
@@ -1512,7 +1513,8 @@ header .social a:hover {
     background-image: url("../images/profile.png");
     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: contain;
+    /* background-size: contain; */
+    background-size: auto 90%;
     background-position: right 0% bottom;
     position: relative;
     z-index: 1;
@@ -2444,7 +2446,7 @@ header .social a:hover {
     }
 
     .hero .section__inner .section__inner-content {
-        background-position: center top;
+        background-position: center bottom;
     }
 
     .hero .hero__content {
