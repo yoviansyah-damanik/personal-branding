@@ -114,21 +114,9 @@ class GeneralController extends Controller
     public function update_biography(Request $request)
     {
         try {
-            if ($request->owner)
-                Configuration::where('attribute', 'owner')
-                    ->update(['value' => $request->owner]);
-
-            if ($request->phone_number)
-                Configuration::where('attribute', 'phone_number')
-                    ->update(['value' => $request->phone_number]);
-
-            if ($request->email)
-                Configuration::where('attribute', 'email')
-                    ->update(['value' => $request->email]);
-
-            if ($request->address)
-                Configuration::where('attribute', 'address')
-                    ->update(['value' => $request->address]);
+            if ($request->about_me)
+                Configuration::where('attribute', 'about_me')
+                    ->update(['value' => $request->about_me]);
 
             Alert::success(
                 __('Successfully!'),
