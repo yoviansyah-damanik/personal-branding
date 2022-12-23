@@ -236,7 +236,7 @@
                                             <div class="form-group">
                                                 <label for="about_me">{{ __('About Me') }}</label>
                                                 <textarea name="about_me" class="summernote" data-height="150" height=150 required>{{ $_about_me }}</textarea>
-                                                @error('app_description')
+                                                @error('about_me')
                                                     <div class="text-danger small">
                                                         {{ $message }}
                                                     </div>
