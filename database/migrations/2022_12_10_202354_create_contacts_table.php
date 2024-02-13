@@ -16,11 +16,11 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('ticket_number')->unique();;
-            $table->string('name')->index();
+            $table->string('name');
             $table->string('email');
             $table->string('contact');
             $table->string('subject');
-            $table->text('message')->index();
+            $table->text('message');
             $table->char('is_read', 1)->default(0);
             $table->char('is_replied', 1)->default(0);
             $table->timestamp('read_at')->nullable();
